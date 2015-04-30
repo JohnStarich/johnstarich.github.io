@@ -1,0 +1,52 @@
+// $use-mozilla-ellipsis-binding: true;
+// @import "compass/typography/text/ellipsis";
+
+/*
+cyan-gray 3797dd
+cyan-blue 4e7aff
+*/
+
+
+/** Color Sets */
+/* $colors: (text-color, body-background, article-background, header-background) */
+// $colors: (#FFF, #200201, #b5322d, #b5322d); //reds
+// $colors: (#FFF, #000020, #3797dd, #3797dd); //blues
+// $colors: (#FFF, #023, #46afc0, #46afc0); //cyans
+// $colors: (#ffe2b3, #2f0000, #7b3f12, #7b3f12); //burnt orange
+
+// $text-color: nth($colors, 1);
+// $body-background: nth($colors, 2);
+// $article-background: nth($colors, 3);
+// $header-background: nth($colors, 4);
+
+
+
+$base-color: #15303b; //cyan
+// $base-color: #410; //red-orange
+// $base-color: darken(saturate(#72c050, 40%), 30%); //green
+
+$text-color: #FFF;
+// $highlight-color: $text-color;
+$highlight-color: #05ffd5;
+$body-background: darken(saturate($base-color, 3%), 4% );
+// $body-background: #0f232b;
+$article-background: $base-color;
+$header-background: $base-color;
+
+/** Fonts */
+$helvetica: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$helvetica-header-weight: 100;
+$trebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$verdana: Verdana, Geneva, sans-serif;
+
+$header-font: $helvetica;
+$header-weight: $helvetica-header-weight;
+$text-font: $trebuchet;
+$text-weight: 400;
+$link-weight: 600;
+
+/** Slideshow */
+$button-color: $text-color;
+$button-size: 3em;
+$button-width: 5%;
+$slideshow-height: 300px;

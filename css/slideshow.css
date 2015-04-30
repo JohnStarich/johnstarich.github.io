@@ -1,0 +1,82 @@
+/*
+cyan-gray 3797dd
+cyan-blue 4e7aff
+*/
+/** Color Sets */
+/* $colors: (text-color, body-background, article-background, header-background) */
+/** Fonts */
+/** Slideshow */
+/** Slideshow Styles
+	
+	Required variables with examples:
+	$button-color: #EEE;
+	$button-size: 50px;
+	$button-width: 5%;
+	$slideshow-height: 300px;
+ */
+/* line 11, ../sass/slideshow.scss */
+.slideshow {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 16, ../sass/slideshow.scss */
+.slideshow button {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  height: 100%;
+  width: 5%;
+  font-size: 3em;
+  background: none;
+  border: none;
+  z-index: 1;
+  color: #FFF;
+  text-shadow: black 0 0 5px;
+}
+@media screen and (max-width: 550px) {
+  /* line 16, ../sass/slideshow.scss */
+  .slideshow button {
+    opacity: 0;
+  }
+}
+/* line 33, ../sass/slideshow.scss */
+.slideshow #left_button {
+  left: 0;
+}
+/* line 37, ../sass/slideshow.scss */
+.slideshow #right_button {
+  right: 0;
+}
+/* line 41, ../sass/slideshow.scss */
+.slideshow .slide-left, .slideshow article, .slideshow .slideout-left {
+  left: -100%;
+  right: 100%;
+}
+/* line 46, ../sass/slideshow.scss */
+.slideshow .slide-right, .slideshow .slideout-right {
+  left: 100%;
+  right: -100%;
+}
+/* line 51, ../sass/slideshow.scss */
+.slideshow article {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* line 60, ../sass/slideshow.scss */
+.slideshow .slidein, .slideshow .slideout-left, .slideshow .slideout-right {
+  -webkit-transition-property: left, right;
+          transition-property: left, right;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+/* line 66, ../sass/slideshow.scss */
+.slideshow .slidein {
+  left: 0;
+  right: 0;
+}

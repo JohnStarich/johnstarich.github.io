@@ -1,0 +1,79 @@
+@import "base";
+
+/** Slideshow Styles
+	
+	Required variables with examples:
+	$button-color: #EEE;
+	$button-size: 50px;
+	$button-width: 5%;
+	$slideshow-height: 300px;
+ */
+.slideshow {
+	height: $slideshow-height;
+	overflow: hidden;
+	position: relative;
+
+	button {
+		@media screen and (max-width: 550px) {
+			opacity: 0;
+		}
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		height: 100%;
+		width: $button-width;
+		font-size: $button-size;
+		background: none;
+		border: none;
+		z-index: 1;
+		color: $button-color;
+		text-shadow: black 0 0 5px;
+	}
+
+	#left_button {
+		left: 0;
+	}
+
+	#right_button {
+		right: 0;
+	}
+
+	.slide-left {
+		left: -100%;
+		right: 100%;
+	}
+
+	.slide-right {
+		left: 100%;
+		right: -100%;
+	}
+
+	article {
+		@extend .slide-left;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin-left: $button-width;
+		margin-right: $button-width;
+	}
+
+	.slidein, .slideout-left, .slideout-right {
+		transition-property: left, right;
+		transition-duration: 0.5s;
+		transition-timing-function: ease;
+	}
+
+	.slidein {
+		left: 0;
+		right: 0;
+	}
+
+	.slideout-left {
+		@extend .slide-left;
+	}
+
+	.slideout-right {
+		@extend .slide-right;
+	}
+
+}

@@ -1,0 +1,108 @@
+@import "base";
+
+a, h1, h2, h3, h4, h5, h6, body {
+	color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header-font;
+	// font-size: 2em;
+	text-align: center;
+
+}
+
+h1, h2 {
+	font-weight: $header-weight;
+	letter-spacing: 1px;
+}
+
+h3, h4, h5, h6 {
+	font-weight: $header-weight * 2;
+}
+
+body {
+	font-family: $text-font;
+	background-color: $body-background;
+	margin: 0;
+	width: 100%;
+}
+
+header {
+	padding: 10px;
+	padding-left: 20px;
+	// background-color: $header-background;
+	
+	h1 {
+		color: $highlight-color;
+		text-align: left;
+		margin: 0;
+		padding: 0;
+		font-family: $header-font;
+		font-size: 50px;
+		font-weight: $header-weight;
+	}
+
+	h4 {
+		text-align: left;
+		margin: 0 1%;
+	}
+}
+
+article {
+	flex-grow: 1;
+	padding: 3%;
+	margin: 2%;
+	background-color: $article-background;
+	border-radius: 2px;
+	text-align: left;
+	
+	h1, h2, h3, h4, h5, h6 {
+		text-align: left;
+	}
+
+	h2 {
+		.subject {
+			font-weight: $header-weight * 2;
+			color: $highlight-color;
+		}
+		padding: 0;
+		padding-bottom: 5px;
+		margin: 0;
+		margin-bottom: 2%;
+		font-weight: $header-weight;
+		// font-weight: $header-weight * 2;
+		letter-spacing: 1px;
+		width: 100%;
+		border-bottom: 1px solid $highlight-color;
+	}
+
+	a {
+		font-weight: $link-weight;
+	}
+
+	ul, ol {
+		padding: 0;
+		padding-left: 1em;
+		margin: 0;
+		margin-left: 1em;
+	}
+
+	ul {
+		list-style-type: circle;
+		ul {
+			list-style-type: disc;
+		}
+	}
+}
+
+section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+footer {
+	padding: 1em;
+	columns: 3;
+}
+

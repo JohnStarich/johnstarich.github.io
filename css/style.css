@@ -1,0 +1,133 @@
+/*
+cyan-gray 3797dd
+cyan-blue 4e7aff
+*/
+/** Color Sets */
+/* $colors: (text-color, body-background, article-background, header-background) */
+/** Fonts */
+/** Slideshow */
+/* line 3, ../sass/style.scss */
+a, h1, h2, h3, h4, h5, h6, body {
+  color: #FFF;
+}
+
+/* line 7, ../sass/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+}
+
+/* line 14, ../sass/style.scss */
+h1, h2 {
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+/* line 19, ../sass/style.scss */
+h3, h4, h5, h6 {
+  font-weight: 200;
+}
+
+/* line 23, ../sass/style.scss */
+body {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  background-color: #0f242d;
+  margin: 0;
+  width: 100%;
+}
+
+/* line 30, ../sass/style.scss */
+header {
+  padding: 10px;
+  padding-left: 20px;
+}
+/* line 35, ../sass/style.scss */
+header h1 {
+  color: #05ffd5;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 50px;
+  font-weight: 100;
+}
+/* line 45, ../sass/style.scss */
+header h4 {
+  text-align: left;
+  margin: 0 1%;
+}
+
+/* line 51, ../sass/style.scss */
+article {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 3%;
+  margin: 2%;
+  background-color: #15303b;
+  border-radius: 2px;
+  text-align: left;
+}
+/* line 59, ../sass/style.scss */
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  text-align: left;
+}
+/* line 63, ../sass/style.scss */
+article h2 {
+  padding: 0;
+  padding-bottom: 5px;
+  margin: 0;
+  margin-bottom: 2%;
+  font-weight: 100;
+  letter-spacing: 1px;
+  width: 100%;
+  border-bottom: 1px solid #05ffd5;
+}
+/* line 64, ../sass/style.scss */
+article h2 .subject {
+  font-weight: 200;
+  color: #05ffd5;
+}
+/* line 79, ../sass/style.scss */
+article a {
+  font-weight: 600;
+}
+/* line 83, ../sass/style.scss */
+article ul, article ol {
+  padding: 0;
+  padding-left: 1em;
+  margin: 0;
+  margin-left: 1em;
+}
+/* line 90, ../sass/style.scss */
+article ul {
+  list-style-type: circle;
+}
+/* line 92, ../sass/style.scss */
+article ul ul {
+  list-style-type: disc;
+}
+
+/* line 98, ../sass/style.scss */
+section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 104, ../sass/style.scss */
+footer {
+  padding: 1em;
+  -webkit-columns: 3;
+     -moz-columns: 3;
+          columns: 3;
+}
