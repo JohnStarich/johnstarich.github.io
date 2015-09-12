@@ -29,19 +29,23 @@ h3, h4, h5, h6 {
 }
 
 /* line 23, ../sass/style.scss */
+body, article, section, p {
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+/* line 27, ../sass/style.scss */
 body {
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   background-color: #0f242d;
   margin: 0;
   width: 100%;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 header {
   padding: 10px;
   padding-left: 20px;
 }
-/* line 35, ../sass/style.scss */
+/* line 38, ../sass/style.scss */
 header h1 {
   color: #05ffd5;
   text-align: left;
@@ -51,13 +55,13 @@ header h1 {
   font-size: 50px;
   font-weight: 100;
 }
-/* line 45, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 header h4 {
   text-align: left;
   margin: 0 1%;
 }
 
-/* line 51, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 article {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -69,11 +73,11 @@ article {
   border-radius: 2px;
   text-align: left;
 }
-/* line 59, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 article h1, article h2, article h3, article h4, article h5, article h6 {
   text-align: left;
 }
-/* line 63, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 article h2 {
   padding: 0;
   padding-bottom: 5px;
@@ -84,32 +88,32 @@ article h2 {
   width: 100%;
   border-bottom: 1px solid #05ffd5;
 }
-/* line 64, ../sass/style.scss */
+/* line 67, ../sass/style.scss */
 article h2 .subject {
   font-weight: 200;
   color: #05ffd5;
 }
-/* line 79, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 article a {
   font-weight: 600;
 }
-/* line 83, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 article ul, article ol {
   padding: 0;
   padding-left: 1em;
   margin: 0;
   margin-left: 1em;
 }
-/* line 90, ../sass/style.scss */
+/* line 93, ../sass/style.scss */
 article ul {
   list-style-type: circle;
 }
-/* line 92, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 article ul ul {
   list-style-type: disc;
 }
 
-/* line 98, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
 section {
   display: -webkit-box;
   display: -webkit-flex;
@@ -124,7 +128,7 @@ section {
           justify-content: center;
 }
 
-/* line 104, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 footer {
   padding: 1em;
   -webkit-columns: 3;

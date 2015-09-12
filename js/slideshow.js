@@ -1,4 +1,4 @@
-$.fn.extend({
+jQuery.fn.extend({
 	/**
 	 * Slideshow: Turns the current object into a slideshow element.
 	 * Classes used: slidein, slide-left, slide-right, slideout-left, slideout-right

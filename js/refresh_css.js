@@ -1,4 +1,4 @@
-$(function() {
+jQuery(function($) {
 	var refreshing = false;
 	var refresherIntervalId;
 	var links = $("link");
