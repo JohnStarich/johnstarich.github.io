@@ -1,0 +1,21 @@
+@media screen and (min-width: 800px) {
+	article {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	article {
+		width: 40%;
+	}
+}
+
+@media screen and (min-width: 980px) {
+	article {
+		width: 980px/2;
+	}
+}
+
+section {
+	max-width: 980px;
+}
