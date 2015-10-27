@@ -1,4 +1,5 @@
-gems: [jekyll-sass]
+gems:
+- jekyll-sass
 
 # defaults
 sass:
