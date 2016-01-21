@@ -1,3 +1,14 @@
+# Site settings
+title: John Starich
+# email:
+description: > # this means to ignore newlines until "baseurl:"
+  All about me.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://johnstarich.com" # the base hostname & protocol for your site
+github_username:  johnstarich
+
+# Build settings
+markdown: kramdown
+
 sass:
-    sass_dir: css
     style: compressed
