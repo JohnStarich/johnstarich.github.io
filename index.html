@@ -25,6 +25,10 @@ layout: default
 <h1 class="section-header">Projects</h1>
 <section>
 	{% for project in site.projects reversed %}
-		{{ project.output }}
+		<article>
+			<h2><span class="subject">{{ project.title }}</span> &ndash; {{ project.company }} <span class="time">{{ project.start_date }} &ndash; {{ project.end_date }}</span></h2>
+			{{ project.excerpt }}
+			<a href="{{ project.url }}"><em style="font-size: 0.75em;">Read more...</em></a>
+		</article>
 	{% endfor %}
 </section>
