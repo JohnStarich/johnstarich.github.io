@@ -3,7 +3,7 @@ layout: experience
 title: Software Developer
 company: Smarter Homes
 start_date: August 2013
-end_date: Present
+end_date: June 2014
 date:   2013-08-14 00:00:00 -0600
 ---
 I am currently the webmaster and iOS developer for Smarter Homes of Austin.

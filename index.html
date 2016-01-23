@@ -1,10 +1,14 @@
 ---
 layout: default
 ---
-<h1>Professional Experience</h1>
+<h1 class="section-header">Professional Experience</h1>
 <section>
 	{% for experience in site.experiences reversed %}
-		{{ experience.output }}
+		<article>
+			<h2><span class="subject">{{ experience.title }}</span> &ndash; {{ experience.company }} <span class="time">{{ experience.start_date }} &ndash; {{ experience.end_date }}</span></h2>
+			{{ experience.excerpt }}
+			<a href="{{ experience.url }}"><em style="font-size: 0.75em;">Read more...</em></a>
+		</article>
 	{% endfor %}
 </section>
 <h1 class="section-header">Skills</h1>
@@ -19,7 +23,7 @@ layout: default
 	</article>
 </section>
 <h1 class="section-header">Projects</h1>
-<section class="">
+<section>
 	{% for project in site.projects reversed %}
 		{{ project.output }}
 	{% endfor %}
