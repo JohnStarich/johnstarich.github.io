@@ -1,106 +1,26 @@
 ---
+layout: default
 ---
-<!DOCTYPE html>
-<html>
-<head>
-<link href="/css/style.css" rel="stylesheet" type="text/css">
-<link href="/css/slideshow.css" rel="stylesheet" type="text/css">
-
-<!-- <script src="/js/jquery.js"></script>
-<script src="/js/jquery.touchwipe.js"></script>
-<script src="/js/slideshow.js"></script>
-<script src="/js/refresh_css.js"></script>
-<script src="/js/index.js"></script> -->
-
-<meta name="viewport" content="width=device-width">
-<title>John Starich | Full Stack Software Engineer</title>
-</head>
-<body>
-<header>
-	<h1>John Starich</h1>
-	<h4>Full stack software engineer</h4>
-</header>
 <h1>Professional Experience</h1>
 <section>
-	<article>
-		<h2><span class="subject">Cloud Services Intern</span> &ndash; IBM <span class="time">May &ndash; August 2015</span></h2>
-		<p>
-			With my OpenStack Innovation team, I developed a monitoring and alerting system for the servers running the Bluemix Container Cloud. This system not only can detect current problems but also future problems, alerting the right people before the problem actually occurs. This changed reactive maintenance to <em>proactive</em> maintenance.
-		</p>
-		<p>
-			This project was picked up for use in multiple teams shortly before I returned to school. The monitoring and alerting system became a hot topic in IBM Cloud because of its ease of use, simple deployment, and proactive alerting.
-		</p>
-		<p>
-			Within three weeks I had the monitoring and alerting stack designed, deployed, and up in our development environment. My intern partner and I made significant strides toward predictive alerts during and after it had been deployed. We also took steps in order to get it in staging (and soon after, production) just before school began for me again. This project was built using custom, as well as public, Docker containers and deployed via docker-compose.
-		</p>
-		<p>
-			In addition to the above, my team and I moved on to Auto Scaling for virtual machines in OpenStack. I built a small OpenStack Heat template parser and modifier utility in Python. I then helped integrate this into the auto scaling API web server.
-		</p>
-		<p>
-			I worked closely with my team members. I also was able to give them advice regarding tools like Docker and how to use containers in deployment, some help with Apache server configuration, and my experience with building RESTful APIs.
-		</p>
-	</article>
-	<article>
-		<h2><span class="subject">Web Developer Intern</span> &ndash; Apple Inc. <span class="time">June &ndash; August 2014</span></h2>
-		<p>
-			With Mac Quality I worked on two utility websites to enable others in Product Integrity to access, manipulate, and customize the data collected from the machine testing process.
-		</p>
-		<p>
-			In two weeks, I built a front end web service for Product Integrity personnel to access individual test runs and all associated data in one place.
-		</p>
-		<p>
-			I worked closely with another intern to create a second web service. It enables anyone in QA, with permissions, to edit a project's information used in reports. I created the interface for QA to customize test run summary output, which increases division efficiency. We made the project modification process significantly faster. The end result is condensed detail page information so that it is far more readable and concise.
-		</p>
-	</article>
-	<article>
-		<h2><span class="subject">Software Developer</span> &ndash; Smarter Homes <span class="time">August 2013 &ndash; Present</span></h2>
-		<p>
-			I am currently the webmaster and iOS developer for Smarter Homes of Austin.
-			As webmaster, I am responsible for adding content to the site and optimizing it to draw search engine traffic.
-			As the iOS developer, I work on an application for internal use. It is used  to more effectively perform their bookkeeping and make sales by keeping prices and inventory readily available.
-		</p>
-	</article>
+	{% for experience in site.experiences reversed %}
+		{{ experience.output }}
+	{% endfor %}
 </section>
 <h1 class="section-header">Skills</h1>
 <section>
 	<article>
 		<ul>
-			<li value="5y">5 years &#8212; Java</li>
-			<li value="3y">3 years &#8212; HTML, CSS, JavaScript</li>
-			<li value="2y">2 years &#8212; Objective-C (iOS)</li>
+			{% assign skills = site.skills | sort: 'experience_duration' | reverse %}
+			{% for skill in skills %}
+				{{ skill.output }}
+			{% endfor %}
 		</ul>
 	</article>
 </section>
 <h1 class="section-header">Projects</h1>
 <section class="">
-	<article>
-		<h2><span class="subject">Noonian</span> &ndash; Thirdship <span class="time">September 2014 &ndash; Present</span></h2>
-		<p>
-			A site designed from the ground up as <em>the</em> product search engine. Remember those "advanced search" checkboxes and dropdowns? No more. Remember those advertisements constantly trying to tell you what you want? Gone. How about we actually show you the products you wanted by just typing your query in? With Noonian, we aim to move beyond the negative tendencies and shortcomings typically associated with product search to produce an experience truly deserving of its users' respect.
-		</p>
-		<p>
-			Currently a work in progress. You can check it out <a href="http://noonian.com/">here</a>.
-		</p>
-	</article>
-	<article>
-		<h2><span class="subject">Arc</span> &ndash; Thirdship <span class="time">October 2012 &ndash; June 2014</span></h2>
-		<p>
-			Initially an attempt to build a game from the ground up, developing this game engine gave us valuable insight into how games ought to be developed. In the process of creating the Arc reactor, we learned how to work as a tight team with a powerful focus on making an intuitive game library API.
-		</p>
-		<p>
-			With OpenGL, we built the reactor in Java and we probably spent more time arguing about the right name for a method than actually writing the code; however this did result in a beautifully crafted API! In the end, we realized the project was way over our heads in complexity. We needed the know-how for optimizing for performance and our skills were not yet ready for making the aforementioned game. We learned a great deal through teamwork, code management techniques, and API development. Soon after wrapping up our ideas, we moved on to working on Noonian.
-		</p>
-	</article>
-	<article>
-		<h2><span class="subject">Home Server</span> &ndash; Personal Project <span class="time">November 2013 &ndash; Present</span></h2>
-		<p>
-			I manage my Ubuntu server very regularly, running a wide variety of applications from inside virtual machines. More recently I've been deploying some internal services within Docker as well. I run multiple websites via the LAMP stack (Linux, Apache, MySQL, PHP). I also have some instances of Mongo, Cassandra as well as Gitlab used in personal development.
-		</p>
-	</article>
+	{% for project in site.projects reversed %}
+		{{ project.output }}
+	{% endfor %}
 </section>
-<footer>
-	&copy; 2012 &ndash; {{ site.time | date: '%Y' }}
-</footer>
-
-</body>
-</html>

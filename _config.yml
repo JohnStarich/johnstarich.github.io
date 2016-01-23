@@ -1,10 +1,11 @@
 # Site settings
 title: John Starich
+tagline: Full stack software engineer
 description: > # this means to ignore newlines until "baseurl:"
   All about me.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://johnstarich.com" # the base hostname & protocol for your site
-github_username:  johnstarich
+github_username: johnstarich
 timezone: America/Chicago
 
 # Build settings
@@ -12,3 +13,8 @@ markdown: kramdown
 gems: [jekyll-assets, octopress-autoprefixer]
 sass:
     style: compressed
+
+collections:
+- experiences
+- skills
+- projects
