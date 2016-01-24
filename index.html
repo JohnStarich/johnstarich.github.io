@@ -3,7 +3,7 @@ layout: default
 ---
 <section>
 	<h1 class="section-header">Professional Experience</h1>
-	{% for experience in site.experiences reversed %}
+	{% for experience in site.categories.experiences %}
 		<article>
 			<h2><span class="subject">{{ experience.title }}</span> &ndash; {{ experience.company }} <span class="time">{{ experience.start_date }} &ndash; {{ experience.end_date }}</span></h2>
 			{{ experience.excerpt | markdownify }}
@@ -24,7 +24,7 @@ layout: default
 </section>
 <section>
 	<h1 class="section-header">Projects</h1>
-	{% for project in site.projects reversed %}
+	{% for project in site.categories.projects %}
 		<article>
 			<h2><span class="subject">{{ project.title }}</span> &ndash; {{ project.company }} <span class="time">{{ project.start_date }} &ndash; {{ project.end_date }}</span></h2>
 			{{ project.excerpt | markdownify }}

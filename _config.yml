@@ -14,9 +14,7 @@ gems: [jekyll-assets, octopress-autoprefixer]
 sass:
     style: compressed
 
+permalink: pretty
 collections:
-    experiences:
-        output: true
-    skills:
-    projects:
-        output: true
+- skills
+

@@ -5,6 +5,7 @@ company: Smarter Homes
 start_date: August 2013
 end_date: June 2014
 date:   2013-08-14 00:00:00 -0600
+category: experiences
 ---
 I am currently the webmaster and iOS developer for Smarter Homes of Austin.
 As webmaster, I am responsible for adding content to the site and optimizing it to draw search engine traffic.

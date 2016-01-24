@@ -5,6 +5,7 @@ company: Personal Project
 start_date: November 2013
 end_date: Present
 date:   2013-11-01 00:00:00 -0600
+category: projects
 ---
 I manage my Ubuntu server very regularly, running a wide variety of applications from inside virtual machines. More recently I've been deploying some internal services within Docker as well.
 
