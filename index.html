@@ -1,34 +1,34 @@
 ---
 layout: default
 ---
-<h1 class="section-header">Professional Experience</h1>
 <section>
+	<h1 class="section-header">Professional Experience</h1>
 	{% for experience in site.experiences reversed %}
 		<article>
 			<h2><span class="subject">{{ experience.title }}</span> &ndash; {{ experience.company }} <span class="time">{{ experience.start_date }} &ndash; {{ experience.end_date }}</span></h2>
-			{{ experience.excerpt }}
-			<a href="{{ experience.url }}"><em style="font-size: 0.75em;">Read more...</em></a>
+			{{ experience.excerpt | markdownify }}
+			<a class="read-more" href="{{ experience.url }}">read more</a>
 		</article>
 	{% endfor %}
 </section>
-<h1 class="section-header">Skills</h1>
 <section>
+	<h1 class="section-header">Skills</h1>
 	<article>
 		<ul>
-			{% assign skills = site.skills | sort: 'experience_duration' | reverse %}
-			{% for skill in skills %}
+			{% assign skills = site.skills | sort: 'experience_duration' %}
+			{% for skill in skills reversed %}
 				{{ skill.output }}
 			{% endfor %}
 		</ul>
 	</article>
 </section>
-<h1 class="section-header">Projects</h1>
 <section>
+	<h1 class="section-header">Projects</h1>
 	{% for project in site.projects reversed %}
 		<article>
 			<h2><span class="subject">{{ project.title }}</span> &ndash; {{ project.company }} <span class="time">{{ project.start_date }} &ndash; {{ project.end_date }}</span></h2>
-			{{ project.excerpt }}
-			<a href="{{ project.url }}"><em style="font-size: 0.75em;">Read more...</em></a>
+			{{ project.excerpt | markdownify }}
+			<a class="read-more" href="{{ project.url }}">read more</a>
 		</article>
 	{% endfor %}
 </section>

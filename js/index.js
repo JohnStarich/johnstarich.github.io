@@ -1,3 +1,5 @@
 jQuery(function($) {
-	$('.slideshow').slideshow('article');
+	var slides = $('.slideshow')
+	if(slides.slideshow)
+		slides.slideshow('article');
 });

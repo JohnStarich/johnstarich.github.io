@@ -1,4 +1,4 @@
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 900px) and (min-width: 800px) {
 	article {
 		width: 100%;
 	}
@@ -10,11 +10,11 @@
 	}
 }
 
-@media screen and (min-width: 980px) {
+/*@media screen and (min-width: 980px) {
 	article {
-		width: 980px/2;
+		width: (980px/2);
 	}
-}
+}*/
 
 section {
 	max-width: 980px;

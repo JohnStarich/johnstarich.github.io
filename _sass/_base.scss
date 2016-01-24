@@ -51,27 +51,3 @@ $button-color: $text-color;
 $button-size: 3em;
 $button-width: 5%;
 $slideshow-height: 300px;
-
-/**
- * Icons
- */
-.icon {
-
-	> svg {
-		display: inline-block;
-		width: 16px;
-		height: 16px;
-		vertical-align: middle;
-
-		path {
-			fill: #828282;
-		}
-	}
-}
-
-.contact-list,
-.social-media-list {
-	list-style: none;
-	margin-left: 0;
-	padding-left: 0
-}

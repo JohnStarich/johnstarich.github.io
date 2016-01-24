@@ -25,7 +25,7 @@ jQuery(function($) {
 			if(refreshing) {
 				links.each(function() {
 					var $this = $(this);
-					if ($this.attr("type").indexOf("css") > -1) {
+					if ($this.attr("rel") == "stylesheet") {
 						var newhref = $(this).attr("href");
 						if(newhref.indexOf('?') >= 0)
 							newhref = newhref.substring(0, newhref.indexOf('?'));

@@ -6,8 +6,6 @@ start_date: October 2012
 end_date: June 2014
 date:   2012-10-01 00:00:00 -0600
 ---
-
 Initially an attempt to build a game from the ground up, developing this game engine gave us valuable insight into how games ought to be developed. In the process of creating the Arc reactor, we learned how to work as a tight team with a powerful focus on making an intuitive game library API.
-
 
 With OpenGL, we built the reactor in Java and we probably spent more time arguing about the right name for a method than actually writing the code; however this did result in a beautifully crafted API! In the end, we realized the project was way over our heads in complexity. We needed the know-how for optimizing for performance and our skills were not yet ready for making the aforementioned game. We learned a great deal through teamwork, code management techniques, and API development. Soon after wrapping up our ideas, we moved on to working on Noonian.
