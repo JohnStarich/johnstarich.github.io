@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
 email: johnstarich@johnstarich.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://johnstarich.com" # the base hostname & protocol for your site
-github_username: johnstarich
+github_username: JohnStarich
 timezone: America/Chicago
 
 # Build settings

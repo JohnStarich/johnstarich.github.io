@@ -9,18 +9,18 @@
 			<div class="footer-col footer-col-1">
 				<ul class="contact-list">
 					<li>check out my <a href="http://www.slideshare.net/JohnStarich/john-starich-resume-2015">resume</a></li>
-					<li>send me an <a href="mailto:{{ site.email }}">email</a></li>
+					<li>or send me an <a href="mailto:{{ site.email }}">email</a></li>
 				</ul>
 			</div>
 
 			<div class="footer-col footer-col-2">
 				<ul class="social-media-list">
-					<li>{% include icon-linkedin.html %}</li>
 					{% if site.github_username %}
 					<li>
 						{% include icon-github.html username=site.github_username %}
 					</li>
 					{% endif %}
+					<li>{% include icon-linkedin.html %}</li>
 				</ul>
 			</div>
 
