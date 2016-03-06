@@ -13,14 +13,12 @@ layout: default
 </section>
 <section>
 	<h1 class="section-header">Skills</h1>
-	<article>
-		<ul>
-			{% assign skills = site.skills | sort: 'experience_duration' %}
-			{% for skill in skills reversed %}
-				{{ skill.output }}
-			{% endfor %}
-		</ul>
-	</article>
+	<div class="skills">
+		{% assign skills = site.skills | sort: 'experience_duration' %}
+		{% for skill in skills reversed %}
+			{{ skill.output }}
+		{% endfor %}
+	</div>
 </section>
 <section>
 	<h1 class="section-header">Projects</h1>
