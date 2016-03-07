@@ -1,13 +1,22 @@
 .skills {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	width: 100%;
-
-	article {
-		text-align: center;
+	justify-content: center;
 		
+	> article {
+		padding: 3% 6%;
+		max-width: 100px;
+		max-height: 200px;
+		text-align: center;
+
 		h1, h2, h3, h4, h5, h6 {
 			text-align: center;
+		}
+
+		svg {
+			width: 100%;
 		}
 	}
 }
