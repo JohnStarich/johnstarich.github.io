@@ -14,7 +14,7 @@ layout: default
 <section>
 	<h1 class="section-header">Skills</h1>
 	<div class="skills">
-		{% assign skills = site.skills | sort: 'experience_duration' %}
+		{% assign skills = site.skills | sort: 'date' %}
 		{% for skill in skills reversed %}
 			{{ skill.output }}
 		{% endfor %}
