@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
-<article>
-{% include icons/{{ page.icon }} %}
-<h1>{{page.title}}</h3>
-	{{ page.experience_duration }}
-</div>
-</article>
+<section>
+	<article>
+		<h2><span class="subject">{{page.title}}</span> &ndash; {{ page.experience_duration }} of experience</h2>
+		{% include icons/{{ page.icon }} %}
+		{{ content }}
+	</article>
+</section>
