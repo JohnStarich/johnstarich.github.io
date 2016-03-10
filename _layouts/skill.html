@@ -2,9 +2,10 @@
 layout: default
 ---
 <section>
-	<article>
+	<article class="skill">
 		<h2><span class="subject">{{page.title}}</span> &ndash; {{ page.experience_duration }} of experience</h2>
-		{% include icons/{{ page.icon }} %}
+		<span class="skill-icon">{% include icons/{{ page.icon }} %}</span>
+		
 		{{ content }}
 	</article>
 </section>
