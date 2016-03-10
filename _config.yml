@@ -17,5 +17,6 @@ sass:
 
 permalink: pretty
 collections:
-- skills
+    skills:
+        output: true
 

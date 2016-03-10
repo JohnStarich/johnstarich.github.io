@@ -7,13 +7,13 @@ section {
 		}
 
 		@media (min-width: 900px) {
-			> article {
+			> .skill {
 				width: 40%;
 			}
 		}
 
 		@media (max-width: 900px) and (min-width: 800px) {
-			> article {
+			> .skill {
 				width: 60%;
 			}
 		}

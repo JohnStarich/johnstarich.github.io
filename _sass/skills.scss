@@ -7,7 +7,7 @@
 	-webkit-align-items: stretch;
 	align-items: stretch;
 		
-	> article {
+	.skill {
 		padding: 2% 3%;
 		max-width: 80px;
 		max-height: 200px;
@@ -16,7 +16,8 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 
-		> * {
+		> *,
+		> a > * {
 			width: 100%;
 		}
 
@@ -24,18 +25,18 @@
 			text-align: center;
 		}
 
-		svg {
-			max-height: 40%;
-			fill: #FFF;
-
-			rect {
-				stroke: #FFF;
-			}
-		}
-
 		.content {
 			-webkit-align-self: flex-end;
 			align-self: flex-end;
 		}
+	}
+}
+
+svg {
+	max-height: 40%;
+	fill: #FFF;
+
+	rect {
+		stroke: #FFF;
 	}
 }

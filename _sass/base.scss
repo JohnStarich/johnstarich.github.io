@@ -27,6 +27,15 @@ body {
 	width: 100%;
 }
 
+.hover-link {
+	text-decoration-line: none;
+	font-weight: inherit;
+
+	&:hover {
+		text-decoration-line: underline;
+	}
+}
+
 .icon {
 
 	> svg {
