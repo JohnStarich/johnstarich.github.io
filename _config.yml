@@ -13,10 +13,16 @@ timezone: America/Chicago
 markdown: kramdown
 gems: [jekyll-assets, octopress-autoprefixer]
 sass:
-    style: compressed
+  style: compressed
 
 permalink: pretty
 collections:
-    skills:
-        output: true
+  skills:
+    layout: skill
+    output: true
 
+defaults:
+- scope:
+    type: skills
+  values:
+    layout: skill
