@@ -8,17 +8,24 @@
 	align-items: stretch;
 		
 	.skill {
-		padding: 2% 3%;
+		margin: 0.75em;
+		padding: 1em;
 		max-width: 80px;
-		max-height: 200px;
 		text-align: center;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 
 		> *,
-		> a > * {
+		> a > *
+		{
 			width: 100%;
+		}
+
+		svg {
+			margin-left: auto;
+			margin-right: auto;
+			width: 60%;
 		}
 
 		h1, h2, h3, h4, h5, h6 {
@@ -33,7 +40,8 @@
 }
 
 svg {
-	max-height: 40%;
+	-webkit-align-self: center;
+	align-self: center;
 	fill: #FFF;
 
 	rect {
@@ -46,4 +54,6 @@ svg {
 	float: right;
 	width: 6em;
 	height: initial;
+	margin-left: 0.5em;
+	margin-bottom: 0.5em;
 }

@@ -17,10 +17,8 @@ layout: default
 		{% assign skills = site.skills | sort: 'date' %}
 		{% for skill in skills reversed %}
 			<article class="skill">
-				<a href="{{ skill.url }}">
-					{% include icons/{{ skill.icon }} %}
-				</a>
 				<a class="hover-link" href="{{ skill.url }}">
+					{% include icons/{{ skill.icon }} %}
 					<div class="content">
 						<h3>{{skill.title}}</h3>
 						{{ skill.experience_duration }}

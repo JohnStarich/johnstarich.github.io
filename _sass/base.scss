@@ -28,11 +28,11 @@ body {
 }
 
 .hover-link {
-	text-decoration-line: none;
+	text-decoration: none;
 	font-weight: inherit;
 
 	&:hover {
-		text-decoration-line: underline;
+		text-decoration: underline;
 	}
 }
 
@@ -73,8 +73,8 @@ section {
 
 article {
 	flex-grow: 1;
-	padding: 3%;
-	margin: 2%;
+	padding: 1.75em;
+	margin: 1.25em;
 	background-color: $article-background;
 	border-radius: 2px;
 	text-align: left;
@@ -83,7 +83,7 @@ article {
 		font-style: italic;
 		font-size: 0.85em;
 		font-weight: 100;
-		text-decoration-line: none;
+		text-decoration: none;
 		color: darken($text-color, 30%);
 
 		&:after {
@@ -91,7 +91,7 @@ article {
 		}
 
 		&:hover {
-			text-decoration-line: underline;
+			text-decoration: underline;
 		}
 	}
 
