@@ -6,35 +6,36 @@
 	justify-content: space-around;
 	-webkit-align-items: stretch;
 	align-items: stretch;
-		
+
 	.skill {
 		margin: 0.75em;
 		padding: 1em;
-		max-width: 80px;
+		max-width: 5em;
 		text-align: center;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-
-		> *,
-		> a > *
-		{
-			width: 100%;
-		}
-
-		svg {
-			margin-left: auto;
-			margin-right: auto;
-			width: 60%;
-		}
 
 		h1, h2, h3, h4, h5, h6 {
 			text-align: center;
 		}
 
-		.content {
-			-webkit-align-self: flex-end;
-			align-self: flex-end;
+		.skill-content {
+			min-height: 9em;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			text-align: center;
+			justify-content: space-between;
+
+			svg {
+				max-height: 4em;
+				margin-top: auto;
+				margin-bottom: auto;
+				width: 60%;
+			}
+
+			.skill-text {
+				display: inline;
+				vertical-align: bottom;
+			}
 		}
 	}
 }

@@ -18,14 +18,15 @@ layout: default
 		{% for skill in skills reversed %}
 			<article class="skill">
 				<a class="hover-link" href="{{ skill.url }}">
-					{% include icons/{{ skill.icon }} %}
-					<div class="content">
-						<h3>{{skill.title}}</h3>
-						{{ skill.experience_duration }}
+					<div class="skill-content">
+						{% include icons/{{ skill.icon }} %}
+						<div class="skill-text">
+							<h3>{{skill.title}}</h3>
+							{{ skill.experience_duration }}
+						</div>
 					</div>
 				</a>
 			</article>
-			</a>
 		{% endfor %}
 	</div>
 </section>
