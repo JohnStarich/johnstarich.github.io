@@ -1,60 +1,60 @@
 .skills {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: space-around;
-	-webkit-align-items: stretch;
-	align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    -webkit-align-items: stretch;
+    align-items: stretch;
 
-	.skill {
-		margin: 0.75em;
-		padding: 1em;
-		max-width: 5em;
-		text-align: center;
+    .skill {
+        margin: 0.75em;
+        padding: 1em;
+        max-width: 5em;
+        text-align: center;
 
-		h1, h2, h3, h4, h5, h6 {
-			text-align: center;
-		}
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
 
-		.skill-content {
-			min-height: 9em;
-			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
-			text-align: center;
-			justify-content: space-between;
+        .skill-content {
+            min-height: 9em;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: space-between;
 
-			svg {
-				max-height: 4em;
-				margin-top: auto;
-				margin-bottom: auto;
-				width: 60%;
-			}
+            svg {
+                max-height: 4em;
+                margin-top: auto;
+                margin-bottom: auto;
+                width: 60%;
+            }
 
-			.skill-text {
-				display: inline;
-				vertical-align: bottom;
-			}
-		}
-	}
+            .skill-text {
+                display: inline;
+                vertical-align: bottom;
+            }
+        }
+    }
 }
 
 svg {
-	-webkit-align-self: center;
-	align-self: center;
-	fill: #FFF;
+    -webkit-align-self: center;
+    align-self: center;
+    fill: #FFF;
 
-	rect {
-		stroke: #FFF;
-	}
+    rect {
+        stroke: #FFF;
+    }
 }
 
 .skill-icon,
 .skill-icon svg {
-	float: right;
-	width: 6em;
-	height: initial;
-	margin-left: 0.5em;
-	margin-bottom: 0.5em;
+    float: right;
+    width: 6em;
+    height: initial;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
 }

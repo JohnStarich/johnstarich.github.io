@@ -1,141 +1,141 @@
 a, h1, h2, h3, h4, h5, h6, body {
-	color: $text-color;
+    color: $text-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $header-font;
-	// font-size: 2em;
-	text-align: center;
+    font-family: $header-font;
+    // font-size: 2em;
+    text-align: center;
 }
 
 h1, h2 {
-	font-weight: $header-weight;
-	letter-spacing: 1px;
+    font-weight: $header-weight;
+    letter-spacing: 1px;
 }
 
 h3, h4, h5, h6 {
-	font-weight: $header-weight * 2;
+    font-weight: $header-weight * 2;
 }
 
 body, article, section, p {
-	font-family: $text-font;	
+    font-family: $text-font;    
 }
 
 body {
-	background-color: $body-background;
-	margin: 0;
-	width: 100%;
+    background-color: $body-background;
+    margin: 0;
+    width: 100%;
 }
 
 .hover-link {
-	text-decoration: none;
-	font-weight: inherit;
+    text-decoration: none;
+    font-weight: inherit;
 
-	&:hover {
-		text-decoration: underline;
-	}
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .icon {
 
-	> svg {
-		display: inline-block;
-		width: 16px;
-		height: 16px;
-		vertical-align: middle;
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
 
-		path {
-			fill: #828282;
-		}
-	}
+        path {
+            fill: #828282;
+        }
+    }
 }
 
 .contact-list,
 .social-media-list {
-	list-style: none;
-	margin-left: 0;
-	padding-left: 0
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0
 }
 
 section {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 auto;
-	justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
 
-	.section-header {
-		width: 100%;
-		font-size: 2em;
-		font-weight: $header-weight;
-		letter-spacing: 1px;
-	}
+    .section-header {
+        width: 100%;
+        font-size: 2em;
+        font-weight: $header-weight;
+        letter-spacing: 1px;
+    }
 }
 
 article {
-	flex-grow: 1;
-	padding: 1.75em;
-	margin: 1.25em;
-	background-color: $article-background;
-	border-radius: 2px;
-	text-align: left;
+    flex-grow: 1;
+    padding: 1.75em;
+    margin: 1.25em;
+    background-color: $article-background;
+    border-radius: 2px;
+    text-align: left;
 
-	.read-more {
-		font-style: italic;
-		font-size: 0.85em;
-		font-weight: 100;
-		text-decoration: none;
-		color: darken($text-color, 30%);
+    .read-more {
+        font-style: italic;
+        font-size: 0.85em;
+        font-weight: 100;
+        text-decoration: none;
+        color: darken($text-color, 30%);
 
-		&:after {
-			content: "...";
-		}
+        &:after {
+            content: "...";
+        }
 
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
-	h1, h2, h3, h4, h5, h6 {
-		text-align: left;
-	}
+    h1, h2, h3, h4, h5, h6 {
+        text-align: left;
+    }
 
-	h2 {
-		.subject {
-			font-weight: $header-weight * 2;
-			color: $highlight-color;
-		}
+    h2 {
+        .subject {
+            font-weight: $header-weight * 2;
+            color: $highlight-color;
+        }
 
-		.time {
-			font-size: 0.7em;
-			margin-left: 0.25em;
-			color: darken($text-color, 20%);
-			white-space: nowrap;
-		}
-		padding: 0;
-		padding-bottom: 5px;
-		margin: 0;
-		margin-bottom: 2%;
-		font-weight: $header-weight;
-		letter-spacing: 1px;
-		width: 100%;
-		border-bottom: 1px solid $highlight-color;
-	}
+        .time {
+            font-size: 0.7em;
+            margin-left: 0.25em;
+            color: darken($text-color, 20%);
+            white-space: nowrap;
+        }
+        padding: 0;
+        padding-bottom: 5px;
+        margin: 0;
+        margin-bottom: 2%;
+        font-weight: $header-weight;
+        letter-spacing: 1px;
+        width: 100%;
+        border-bottom: 1px solid $highlight-color;
+    }
 
-	a {
-		font-weight: $link-weight;
-	}
+    a {
+        font-weight: $link-weight;
+    }
 
-	ul, ol {
-		padding: 0;
-		padding-left: 1em;
-		margin: 0;
-		margin-left: 1em;
-	}
+    ul, ol {
+        padding: 0;
+        padding-left: 1em;
+        margin: 0;
+        margin-left: 1em;
+    }
 
-	ul {
-		list-style-type: circle;
-		ul {
-			list-style-type: disc;
-		}
-	}
+    ul {
+        list-style-type: circle;
+        ul {
+            list-style-type: disc;
+        }
+    }
 }
