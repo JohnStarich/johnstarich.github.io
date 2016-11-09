@@ -37,15 +37,14 @@ body {
 }
 
 .icon {
-
     > svg {
         display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        margin: 5px;
 
         path {
-            fill: #828282;
+            fill: #fff;
         }
     }
 }
@@ -53,6 +52,7 @@ body {
 .contact-list,
 .social-media-list {
     list-style: none;
+    text-align: center;
     margin-left: 0;
     padding-left: 0
 }
