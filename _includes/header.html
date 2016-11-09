@@ -2,13 +2,14 @@
 
   <div class="wrapper">
     <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
-    <h4 class="site-tagline">{{ site.tagline }}</h4>
+    <h3 class="site-tagline">{{ site.tagline }}</h3>
     <div class="site-links">
-        <a href="mailto:{{ site.email }}">email</a>
-        &ndash;
-        <a href="http://www.slideshare.net/JohnStarich/resume-2016-68461669">resume</a>
-        <br>
+        <a href="http://www.slideshare.net/JohnStarich/resume-2016-68461669">Resume</a>
+        &bull;
+        <a href="mailto:{{ site.email }}">Email</a>
+        &bull;
         {% include github.html username=site.github_username %}
+        &bull;
         {% include linkedin.html %}
     </div>
   </div>
