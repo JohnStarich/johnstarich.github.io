@@ -17,5 +17,24 @@ section {
                 width: 60%;
             }
         }
+
+        @media (min-width: 800px) {
+            article:not(:only-child) {
+                max-width: 300px;
+                .subject:after {
+                    content: "\a";
+                    white-space: pre;
+                }
+            }
+        }
+
+        article {
+            @media (max-width: 550px) {
+                .subject:after {
+                    content: "\a";
+                    white-space: pre;
+                }
+            }
+        }
     }
 }

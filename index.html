@@ -5,7 +5,7 @@ layout: default
     <h1 class="section-header">Professional Experience</h1>
     {% for experience in site.categories.experiences %}
         <article>
-            <h2><span class="subject">{{ experience.title }}</span> &ndash; {{ experience.company }} <span class="time">{{ experience.start_date }} &ndash; {{ experience.end_date }}</span></h2>
+            <h2><span class="subject">{{ experience.title }}</span> <span class="company">{{ experience.company }}</span> <span class="time">{{ experience.start_date }} &ndash; {{ experience.end_date }}</span></h2>
             {{ experience.excerpt | markdownify }}
             <a class="read-more" href="{{ experience.url }}">read more</a>
         </article>
@@ -34,7 +34,7 @@ layout: default
     <h1 class="section-header">Projects</h1>
     {% for project in site.categories.projects %}
         <article>
-            <h2><span class="subject">{{ project.title }}</span> &ndash; {{ project.company }} <span class="time">{{ project.start_date }} &ndash; {{ project.end_date }}</span></h2>
+            <h2><span class="subject">{{ project.title }}</span> <span class="company">{{ project.company }}</span> <span class="time">{{ project.start_date }} &ndash; {{ project.end_date }}</span></h2>
             {{ project.excerpt | markdownify }}
             <a class="read-more" href="{{ project.url }}">read more</a>
         </article>

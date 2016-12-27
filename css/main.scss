@@ -38,7 +38,7 @@ $header-background: $base-color;
 
 /** Fonts */
 $helvetica: Helvetica, Arial, "Lucida Grande", sans-serif;
-$helvetica_neue: "Helvetica Neue", $helvetica;
+$helvetica_neue: "Helvetica Neue", "Yantramanav", $helvetica;
 $helvetica-header-weight: 100;
 $trebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $verdana: Verdana, Geneva, sans-serif;
@@ -47,7 +47,7 @@ $header-font: $helvetica_neue;
 $header-weight: $helvetica-header-weight;
 $text-font: $helvetica;
 $text-weight: 400;
-$link-weight: 600;
+$link-weight: 500;
 
 /** Slideshow */
 $button-color: $text-color;

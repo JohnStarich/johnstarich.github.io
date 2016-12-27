@@ -4,13 +4,13 @@ a, h1, h2, h3, h4, h5, h6, body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font;
-    // font-size: 2em;
     text-align: center;
 }
 
 h1, h2 {
     font-weight: $header-weight;
-    letter-spacing: 1px;
+    font-size: 1.5em;
+    letter-spacing: 0.03em;
 }
 
 h3, h4, h5, h6 {
@@ -60,6 +60,7 @@ body {
 section {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     margin: 0 auto;
     justify-content: center;
 
@@ -67,7 +68,6 @@ section {
         width: 100%;
         font-size: 2em;
         font-weight: $header-weight;
-        letter-spacing: 1px;
     }
 }
 
@@ -103,11 +103,21 @@ article {
         .subject {
             font-weight: $header-weight * 2;
             color: $highlight-color;
+            &:after {
+                content: " \2013";
+                color: $text-color;
+                font-weight: $header-weight;
+            }
+        }
+
+        .company:after {
+            content: " ";
+            white-space: pre;
+            font-size: 0.5em;
         }
 
         .time {
             font-size: 0.7em;
-            margin-left: 0.25em;
             color: darken($text-color, 20%);
             white-space: nowrap;
         }
@@ -116,7 +126,6 @@ article {
         margin: 0;
         margin-bottom: 2%;
         font-weight: $header-weight;
-        letter-spacing: 1px;
         width: 100%;
         border-bottom: 1px solid $highlight-color;
     }
