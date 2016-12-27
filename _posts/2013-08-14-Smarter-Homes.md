@@ -2,8 +2,8 @@
 layout: experience
 title: Web & iOS Developer
 company: Smarter Homes
-start_date: August 2013
-end_date: June 2014
+start_date: 2013
+end_date: 2014
 date:   2013-08-14 00:00:00 -0600
 category: experiences
 ---
