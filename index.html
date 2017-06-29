@@ -7,7 +7,11 @@ layout: default
         <article>
             <h2><span class="subject">{{ experience.title }}</span> <span class="company">{{ experience.company }}</span> <span class="time">{{ experience.start_date }} &ndash; {{ experience.end_date }}</span></h2>
             {{ experience.excerpt | markdownify }}
-            <a class="read-more" href="{{ experience.url }}">read more</a>
+            {% if experience.excerpt != experience.content %}
+                <a class="read-more" href="{{ experience.url }}">read more</a>
+            {% else %}
+                <a class="read-more" href="{{ experience.url }}">Check back later for more information</a>
+            {% endif %}
         </article>
     {% endfor %}
 </section>
