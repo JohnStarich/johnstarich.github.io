@@ -1,0 +1,10 @@
+---
+title: Go
+date: 0001-06-01 00:00:00 -0600
+experience_start_date: 2017-06-20 00:00:00 -0600
+experience_duration: 6 months
+icon: golang.svg
+---
+I started working with Go professionally at [IBM](/experiences/2017/06/20/IBM) on cloud services. I'm still learning right now, but I should be up to speed soon!
+
+My Senior Design capstone project also used Go, which you can check out [on GitHub](https://github.com/mellanox-senior-design/docker-volume-rdma).
