@@ -1,8 +1,8 @@
 ---
 title: JavaScript
-date: 0003-01-01 00:00:00 -0600
+date: 0004-01-01 00:00:00 -0600
 experience_start_date: 2013-05-01 00:00:00 -0600
-experience_duration: 3 years
+experience_duration: 4 years
 icon: javascript.svg
 ---
 I have been developing with HTML, CSS, and JavaScript since 2013. I have developed my own website in Wordpress initially, followed by a custom site in late 2014, and finally the site you see here in 2015.

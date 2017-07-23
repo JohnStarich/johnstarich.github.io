@@ -1,8 +1,8 @@
 ---
 title: Git
-date: 0005-01-01 00:00:00 -0600
+date: 0006-01-01 00:00:00 -0600
 experience_start_date: 2011-02-01 00:00:00 -0600
-experience_duration: 5 years
+experience_duration: 6 years
 icon: git.svg
 ---
 I started using Git in my first few years of learning Java (2011) to develop my Minecraft mods. Some time later I began using proper Git workflows to work on Arc as a more effective team.
