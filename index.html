@@ -20,6 +20,7 @@ layout: default
     <div class="skills">
         {% assign skills = site.skills | sort: 'date' %}
         {% for skill in skills reversed %}
+            {% unless skill.hidden %}
             <article class="skill">
                 <a class="hover-link" href="{{ skill.url }}">
                     <div class="skill-content">
@@ -31,6 +32,7 @@ layout: default
                     </div>
                 </a>
             </article>
+            {% endunless %}
         {% endfor %}
     </div>
 </section>
