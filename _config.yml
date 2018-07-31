@@ -2,7 +2,7 @@
 title: John Starich
 tagline: Full Stack Software Engineer
 description: > # this means to ignore newlines until "baseurl:"
-  I am a full stack software engineer working in IBM Cloud Services
+  Full stack software engineer writing services for IBM Cloud. Currently works on the IBM Cloud Kubernetes Service and its supporting services.
 email: johnstarich@johnstarich.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://johnstarich.com" # the base hostname & protocol for your site
@@ -15,6 +15,9 @@ markdown: kramdown
 gems: [jekyll-assets, octopress-autoprefixer]
 sass:
   style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 permalink: pretty
 collections:
@@ -23,7 +26,7 @@ collections:
     output: true
 
 defaults:
-- scope:
-    type: skills
-  values:
-    layout: skill
+  - scope:
+      type: skills
+    values:
+      layout: skill
