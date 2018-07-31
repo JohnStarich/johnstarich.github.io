@@ -1,8 +1,8 @@
 ---
 title: Go
-date: 0001-06-01 00:00:00 -0600
+date: 0001-01-01 00:00:00 -0600
 experience_start_date: 2017-06-20 00:00:00 -0600
-experience_duration: 6 months
+experience_duration: 1 year
 icon: golang.svg
 ---
 I started working with Go professionally at [IBM](/experiences/2017/06/20/IBM) on cloud services. I'm still learning right now, but I should be up to speed soon!

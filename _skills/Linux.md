@@ -1,8 +1,8 @@
 ---
 title: Linux
-date: 0003-01-01 00:00:00 -0600
+date: 0004-01-01 00:00:00 -0600
 experience_start_date: 2014-06-01 00:00:00 -0600
-experience_duration: 3 years
+experience_duration: 4 years
 icon: tux.svg
 ---
 I run an Ubuntu server remotely, where I manage multiple virtual machines for all of my web services. I run three websites, Git services for myself, several databases, a couple game servers, and a Teamspeak server for talking with my friends in a Skype-like environment.
