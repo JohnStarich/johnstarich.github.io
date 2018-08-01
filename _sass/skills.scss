@@ -12,6 +12,10 @@
         padding: 1em;
         max-width: 5em;
         text-align: center;
+        @media print {
+            margin: 0.2em 0;
+            padding: 0.5em;
+        }
 
         h1, h2, h3, h4, h5, h6 {
             text-align: center;
@@ -44,9 +48,15 @@ svg {
     -webkit-align-self: center;
     align-self: center;
     fill: #FFF;
+    @media print {
+        fill: #000;
+    }
 
     rect {
         stroke: #FFF;
+        @media print {
+            stroke: #000;
+        }
     }
 }
 

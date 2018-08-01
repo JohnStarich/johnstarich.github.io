@@ -8,6 +8,9 @@ html {
 
 a, h1, h2, h3, h4, h5, h6, body {
     color: $text-color;
+    @media print {
+        color: #000;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2 {
     font-weight: $header-weight;
     font-size: 1.5em;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
 }
 
 h3, h4, h5, h6 {
@@ -26,13 +29,21 @@ h3, h4, h5, h6 {
 }
 
 body, article, section, p {
-    font-family: $text-font;    
+    font-family: $text-font;
 }
 
 body {
-    background-color: $body-background;
     margin: 0;
     width: 100%;
+    background-color: $body-background;
+    @media print {
+        background: none;
+    }
+}
+
+article, section, p {
+    line-height: 1.4em;
+    letter-spacing: 0.02em;
 }
 
 .hover-link {
@@ -53,6 +64,9 @@ body {
 
         path {
             fill: #fff;
+            @media print {
+                fill: #000;
+            }
         }
     }
 }
@@ -76,6 +90,12 @@ section {
         width: 100%;
         font-size: 2em;
         font-weight: $header-weight;
+
+        @media print {
+            font-size: 1.5em;
+            page-break-after: avoid;
+            break-after: avoid;
+        }
     }
 }
 
@@ -83,9 +103,26 @@ article {
     flex-grow: 1;
     padding: 1.75em;
     margin: 1.25em;
-    background-color: $article-background;
     border-radius: 2px;
     text-align: left;
+    background-color: $article-background;
+    @media print {
+        background: none;
+        border: none;
+        margin: 0.1em;
+        padding: 0 0.5em;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        page-break-after: always;
+        break-after: always;
+
+        &:after {
+            content: "\a";
+            white-space: pre;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+    }
 
     .read-more {
         font-style: italic;
@@ -93,6 +130,9 @@ article {
         font-weight: 100;
         text-decoration: none;
         color: darken($text-color, 30%);
+        @media print {
+            display: none;
+        }
 
         &:after {
             content: "...";
@@ -105,16 +145,40 @@ article {
 
     h1, h2, h3, h4, h5, h6 {
         text-align: left;
+        line-height: 1.1em;
     }
 
     h2 {
+        @media print {
+            display: flex;
+            flex-direction: row;
+            flex-flow: wrap;
+            align-items: baseline;
+            font-size: 1.25em;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            page-break-after: avoid;
+            break-after: avoid;
+
+            > * {
+                margin: 0.2em;
+                display: block;
+            }
+        }
+
         .subject {
             font-weight: $header-weight * 2;
             color: $highlight-color;
+            @media print {
+                color: #000;
+            }
             &:after {
                 content: " \2013";
-                color: $text-color;
                 font-weight: $header-weight;
+                color: $text-color;
+                @media print {
+                    color: #000;
+                }
             }
         }
 
@@ -126,8 +190,13 @@ article {
 
         .time {
             font-size: 0.7em;
-            color: darken($text-color, 20%);
             white-space: nowrap;
+            color: darken($text-color, 20%);
+            @media print {
+                color: #000;
+                flex-grow: 1;
+                text-align: right;
+            }
         }
         padding: 0;
         padding-bottom: 5px;
@@ -136,6 +205,9 @@ article {
         font-weight: $header-weight;
         width: 100%;
         border-bottom: 1px solid $highlight-color;
+        @media print {
+            border-color: #000;
+        }
     }
 
     a {

@@ -13,8 +13,14 @@ header {
     .site-title {
         a {
             color: $highlight-color;
+            @media print {
+                color: #000
+            }
         }
         color: $highlight-color;
+        @media print {
+            color: #000;
+        }
         margin: 0;
         padding: 0;
         font-family: $header-font;
@@ -31,6 +37,10 @@ header {
         font-family: $header-font;
         font-size: 0.9em;
         margin: 0.5em;
+
+        @media print {
+            display: none;
+        }
 
         a {
             font-weight: $link-weight;
