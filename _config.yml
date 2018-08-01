@@ -12,7 +12,6 @@ future: false
 
 # Build settings
 markdown: kramdown
-gems: [jekyll-assets, octopress-autoprefixer]
 sass:
   style: compressed
 plugins:
