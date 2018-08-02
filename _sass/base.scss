@@ -100,6 +100,8 @@ section {
 }
 
 article {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     padding: 1.75em;
     margin: 1.25em;
@@ -124,23 +126,29 @@ article {
         }
     }
 
+    $read-more-color: darken($text-color, 30%);
+    $read-more-underline-color: darken($read-more-color, 30%);
+
     .read-more {
+        margin-top: auto;
         font-style: italic;
         font-size: 0.85em;
         font-weight: 100;
-        text-decoration: none;
-        color: darken($text-color, 30%);
+        color: $read-more-color;
+        -webkit-text-decoration-color: $read-more-underline-color;
+        text-decoration-color: $read-more-underline-color;
         @media print {
             display: none;
         }
-
         &:after {
             content: "...";
         }
+    }
 
-        &:hover {
-            text-decoration: underline;
-        }
+    a.read-more:hover {
+        color: $text-color;
+        -webkit-text-decoration-color: $read-more-color;
+        text-decoration-color: $read-more-color;
     }
 
     h1, h2, h3, h4, h5, h6 {

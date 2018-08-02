@@ -10,7 +10,7 @@ layout: default
             {% if experience.excerpt != experience.content %}
                 <a class="read-more" href="{{ experience.url }}">read more</a>
             {% else %}
-                <a class="read-more" href="{{ experience.url }}">Check back later for more information</a>
+                <span class="read-more" href="{{ experience.url }}">Check back later for more information</span>
             {% endif %}
         </article>
     {% endfor %}
