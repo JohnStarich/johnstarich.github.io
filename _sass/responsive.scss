@@ -21,7 +21,7 @@ section {
         @media (min-width: 800px) {
             article:not(:only-child) {
                 max-width: 300px;
-                .subject:after {
+                .company:before {
                     content: "\a";
                     white-space: pre;
                 }
@@ -30,7 +30,7 @@ section {
 
         article {
             @media (max-width: 550px) {
-                .subject:after {
+                .company:before {
                     content: "\a";
                     white-space: pre;
                 }

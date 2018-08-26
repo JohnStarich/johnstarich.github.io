@@ -6,7 +6,7 @@ html {
     text-size-adjust: 100%;
 }
 
-a, h1, h2, h3, h4, h5, h6, body {
+h1, h2, h3, h4, h5, h6, body {
     color: $text-color;
     @media print {
         color: #000;
@@ -38,6 +38,14 @@ body {
     background-color: $body-background;
     @media print {
         background: none;
+    }
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
     }
 }
 
@@ -126,15 +134,15 @@ article {
         }
     }
 
-    $read-more-color: darken($text-color, 30%);
-    $read-more-underline-color: darken($read-more-color, 30%);
+    $read-more-color: $link-color;
+    $read-more-underline-color: darken($read-more-color, 10%);
 
     .read-more {
         margin-top: auto;
         font-style: italic;
         font-size: 0.85em;
         font-weight: 100;
-        color: $read-more-color;
+        color: $text-color;
         -webkit-text-decoration-color: $read-more-underline-color;
         text-decoration-color: $read-more-underline-color;
         @media print {
@@ -145,10 +153,14 @@ article {
         }
     }
 
-    a.read-more:hover {
-        color: $text-color;
-        -webkit-text-decoration-color: $read-more-color;
-        text-decoration-color: $read-more-color;
+    a.read-more {
+        color: $read-more-color;
+
+        &:hover {
+            color: lighten($read-more-color, 15%);
+            -webkit-text-decoration-color: $read-more-underline-color;
+            text-decoration-color: $read-more-underline-color;
+        }
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -176,24 +188,26 @@ article {
 
         .subject {
             font-weight: $header-weight * 2;
-            color: $highlight-color;
             @media print {
                 color: #000;
             }
-            &:after {
-                content: " \2013";
+        }
+
+        .company {
+            &:before {
+                content: "\2013";
+                margin-right: 0.3em;
                 font-weight: $header-weight;
                 color: $text-color;
                 @media print {
                     color: #000;
                 }
             }
-        }
-
-        .company:after {
-            content: " ";
-            white-space: pre;
-            font-size: 0.5em;
+            &:after {
+                content: " ";
+                white-space: pre;
+                font-size: 0.5em;
+            }
         }
 
         .time {

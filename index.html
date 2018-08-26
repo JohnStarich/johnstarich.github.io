@@ -2,47 +2,25 @@
 layout: default
 ---
 <section>
-    <h1 class="section-header">Professional Experience</h1>
-    {% for experience in site.categories.experiences %}
+    {% for post in site.posts %}
         <article>
-            <h2><span class="subject">{{ experience.title }}</span> <span class="company">{{ experience.company }}</span> <span class="time">{{ experience.start_date }} &ndash; {{ experience.end_date }}</span></h2>
-            {{ experience.excerpt | markdownify }}
-            {% if experience.excerpt != experience.content %}
-                <a class="read-more" href="{{ experience.url }}">read more</a>
-            {% else %}
-                <span class="read-more" href="{{ experience.url }}">Check back later for more information</span>
+            <h2>
+                <a class="subject" href="{{ post.url }}">{{ post.title }}</a>
+                {% if post.category == "experiences" %}
+                <span class="company">{{ post.company }}</span>
+                <span class="time">{{ post.start_date }} &ndash; {{ post.end_date }}</span>
+                {% else %}
+                    {% if post.start_date and post.end_date %}
+                    <span class="time">{{ post.start_date }} &ndash; {{ post.end_date }}</span>
+                    {% elsif post.start_date %}
+                    <span class="time">{{ post.start_date }}</span>
+                    {% endif %}
+                {% endif %}
+            </h2>
+            {{ post.excerpt | markdownify }}
+            {% if post.excerpt != post.content %}
+                <a class="read-more" href="{{ post.url }}">read more</a>
             {% endif %}
-        </article>
-    {% endfor %}
-</section>
-<section>
-    <h1 class="section-header">Skills</h1>
-    <div class="skills">
-        {% assign skills = site.skills | sort: 'date' %}
-        {% for skill in skills reversed %}
-            {% unless skill.hidden %}
-            <article class="skill">
-                <a class="hover-link" href="{{ skill.url }}">
-                    <div class="skill-content">
-                        {% include icons/{{ skill.icon }} %}
-                        <div class="skill-text">
-                            <h3>{{skill.title}}</h3>
-                            {{ skill.experience_duration }}
-                        </div>
-                    </div>
-                </a>
-            </article>
-            {% endunless %}
-        {% endfor %}
-    </div>
-</section>
-<section>
-    <h1 class="section-header">Projects</h1>
-    {% for project in site.categories.projects %}
-        <article>
-            <h2><span class="subject">{{ project.title }}</span> <span class="company">{{ project.company }}</span> <span class="time">{{ project.start_date }} &ndash; {{ project.end_date }}</span></h2>
-            {{ project.excerpt | markdownify }}
-            <a class="read-more" href="{{ project.url }}">read more</a>
         </article>
     {% endfor %}
 </section>

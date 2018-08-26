@@ -1,40 +1,13 @@
 ---
 ---
 
-// $use-mozilla-ellipsis-binding: true;
-// @import "compass/typography/text/ellipsis";
-
-/*
-cyan-gray 3797dd
-cyan-blue 4e7aff
-*/
-
-
-/** Color Sets */
-/* $colors: (text-color, body-background, article-background, header-background) */
-// $colors: (#FFF, #200201, #b5322d, #b5322d); //reds
-// $colors: (#FFF, #000020, #3797dd, #3797dd); //blues
-// $colors: (#FFF, #023, #46afc0, #46afc0); //cyans
-// $colors: (#ffe2b3, #2f0000, #7b3f12, #7b3f12); //burnt orange
-
-// $text-color: nth($colors, 1);
-// $body-background: nth($colors, 2);
-// $article-background: nth($colors, 3);
-// $header-background: nth($colors, 4);
-
-
-
-$base-color: #15303b; //cyan
-// $base-color: #410; //red-orange
-// $base-color: darken(saturate(#72c050, 40%), 30%); //green
-
-$text-color: #FFF;
-// $highlight-color: $text-color;
-$highlight-color: #05ffd5;
-$body-background: darken(saturate($base-color, 3%), 4% );
-// $body-background: #0f232b;
+$base-color: #ffffff;
+$text-color: #0f232b;
+$highlight-color: #000000;
+$body-background: darken($base-color, 4%);
 $article-background: $base-color;
 $header-background: $base-color;
+$link-color: #08d;
 
 /** Fonts */
 $helvetica: Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -48,7 +21,7 @@ $header-font: $helvetica_neue;
 $header-weight: $helvetica-header-weight;
 $text-font: $georgia;
 $text-weight: 400;
-$link-weight: 500;
+$link-weight: 400;
 
 /** Slideshow */
 $button-color: $text-color;
