@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<section>
+    <article>
+        <h2>
+            <span class="subject">{{ page.title }}</span>
+            {% if page.start_date and page.end_date %}
+            <span class="time">{{ page.start_date }} &ndash; {{ page.end_date }}</span>
+            {% elsif page.start_date %}
+            <span class="time">{{ page.start_date }}</span>
+            {% endif %}
+        </h2>
+        {{ content }}
+    </article>
+</section>
