@@ -2,7 +2,17 @@
 layout: default
 ---
 <section>
-    {% for post in site.posts %}
+    {% assign front_page_posts = site.categories.projects |
+        concat:site.categories.experiences |
+        sort: "date" |
+        reverse |
+        group_by: "present" |
+        sort: "name" |
+        reverse |
+        map: "items"
+    %}
+    {% for grouped_posts in front_page_posts %}
+    {% for post in grouped_posts %}
         <article>
             <h2>
                 <a class="subject" href="{{ post.url }}">{{ post.title }}</a>
@@ -22,5 +32,6 @@ layout: default
                 <a class="read-more" href="{{ post.url }}">read more</a>
             {% endif %}
         </article>
+    {% endfor %}
     {% endfor %}
 </section>
