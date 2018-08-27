@@ -27,6 +27,12 @@ layout: default
                     {% endif %}
                 {% endif %}
             </h2>
+            {% if post.media %}
+                {% assign asset = post.media[0] %}
+                <a href="{{ post.url }}">
+                    {% include media.html file=asset %}
+                </a>
+            {% endif %}
             {{ post.excerpt | markdownify }}
             {% if post.excerpt != post.content %}
                 <a class="read-more" href="{{ post.url }}">read more</a>

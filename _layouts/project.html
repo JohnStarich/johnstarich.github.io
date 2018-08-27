@@ -11,6 +11,12 @@ layout: default
             <span class="time">{{ page.start_date }}</span>
             {% endif %}
         </h2>
+        {% if page.media %}
+            {% assign asset = page.media[0] %}
+            <a href="{{ page.url }}">
+                {% include media.html file=asset %}
+            </a>
+        {% endif %}
         {{ content }}
     </article>
 </section>

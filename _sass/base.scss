@@ -54,6 +54,21 @@ article, section, p {
     letter-spacing: 0.02em;
 }
 
+.media {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: 0.5em;
+    max-height: 30em;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: (3 / 4) * 100%;
+    }
+}
+
 .hover-link {
     text-decoration: none;
     font-weight: inherit;
