@@ -131,6 +131,8 @@ article {
     border-radius: 2px;
     text-align: left;
     background-color: $article-background;
+    max-width: 40em;
+
     @media print {
         background: none;
         border: none;

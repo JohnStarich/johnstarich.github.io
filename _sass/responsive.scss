@@ -1,26 +1,15 @@
 section {
-    max-width: 980px;
+    $section-width: 1200px;
+    max-width: $section-width;
 
     @media screen {
-        @media (max-width: 980px) {
+        @media (max-width: $section-width) {
             width: 100%;
         }
 
-        @media (min-width: 900px) {
-            > .skill {
-                width: 40%;
-            }
-        }
-
-        @media (max-width: 900px) and (min-width: 800px) {
-            > .skill {
-                width: 60%;
-            }
-        }
-
-        @media (min-width: 800px) {
+        @media (min-width: $section-width) {
             article:not(:only-child) {
-                max-width: 300px;
+                max-width: 30em;
                 .company:before {
                     content: "\a";
                     white-space: pre;
@@ -29,7 +18,7 @@ section {
         }
 
         article {
-            @media (max-width: 550px) {
+            @media (max-width: 44em) {
                 .company:before {
                     content: "\a";
                     white-space: pre;
