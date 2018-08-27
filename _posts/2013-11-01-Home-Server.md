@@ -4,7 +4,6 @@ title: Home Server
 company: Personal Project
 start_date: November 2013
 end_date: Present
-present: true
 date:   2013-11-01 00:00:00 -0600
 category: projects
 ---
