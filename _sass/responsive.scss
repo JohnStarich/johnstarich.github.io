@@ -24,6 +24,16 @@ section {
                     white-space: pre;
                 }
             }
+
+            @media (min-width: 35em) {
+                a.media-link {
+                    float: right;
+                    width: 50%;
+                    .media {
+                        margin-left: 0.5em;
+                    }
+                }
+            }
         }
     }
 }
