@@ -1,7 +1,6 @@
 ---
-layout: experience
+layout: project
 title: Home Server
-company: Personal Project
 start_date: November 2013
 end_date: Present
 date:   2013-11-01 00:00:00 -0600
