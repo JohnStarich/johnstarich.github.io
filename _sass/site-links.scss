@@ -1,0 +1,19 @@
+@import "base";
+
+.site-links {
+    font-family: $header-font;
+    font-weight: $link-weight;
+    font-size: 0.9em;
+    margin: 0.5em;
+
+    @media print {
+        display: none;
+    }
+
+    a {
+        font-weight: $link-weight;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,11 +1,15 @@
 footer {
-    color: rgba(255, 255, 255, 0.5);
     font-weight: 300;
-    font-size: 0.75em;
-    padding: 2em;
+    font-size: 0.9em;
+    margin: 2em;
     text-align: center;
-    // columns: 3;
-    a {
-        color: darken($text-color, 20%);
+
+    .footer-heading {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        font-size: 0.9em;
+        margin-top: 2em;
     }
 }

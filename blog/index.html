@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section>
+{% assign blog_posts = site.posts | where_exp: "post", "post.category != 'experiences'" %}
+{% for post in blog_posts %}
+    <article class="post post-excerpt">
+        <h2>
+            <a class="subject" href="{{ post.url }}">{{ post.title }}</a>
+            <span class="time">{{ post.date | date: '%B %e, %Y' }}</span>
+        </h2>
+        <div class="article-excerpt">
+            {% if post.media %}
+                {% assign asset = post.media[0] %}
+                <a class="media-link" href="{{ post.url }}">
+                    {% include media.html file=asset %}
+                </a>
+            {% endif %}
+            {{ post.content }}
+        </div>
+    </article>
+{% endfor %}
+</section>

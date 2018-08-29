@@ -1,0 +1,13 @@
+<div class="site-links">
+    <a href="https://github.com/JohnStarich/johnstarich.github.io/raw/master/resumes/John_Starich_2018.pdf">Resume</a>
+    &bull;
+    <a href="mailto:{{ site.email }}">Email</a>
+    &bull;
+    <a href="/blog">Blog</a>
+    &bull;
+    {% include github.html username=site.github_username %}
+    {% if include.all == true %}
+        &bull;
+        {% include linkedin.html %}
+    {% endif %}
+</div>
