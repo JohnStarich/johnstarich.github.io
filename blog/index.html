@@ -16,7 +16,10 @@ layout: default
                     {% include media.html file=asset %}
                 </a>
             {% endif %}
-            {{ post.content }}
+            {{ post.excerpt | markdownify }}
+            {% if post.excerpt != post.content %}
+                <a class="read-more" href="{{ post.url }}">read more</a>
+            {% endif %}
         </div>
     </article>
 {% endfor %}
