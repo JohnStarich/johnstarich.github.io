@@ -7,6 +7,7 @@ email: johnstarich@johnstarich.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://johnstarich.com" # the base hostname & protocol for your site
 github_username: JohnStarich
+logo: /favicon.png
 timezone: America/Chicago
 future: false
 unpublished: false
