@@ -133,6 +133,11 @@ article {
     background-color: $article-background;
     max-width: 40em;
 
+    @media (max-width: 40em) {
+        padding: 5%;
+        margin: 3%;
+    }
+
     @media print {
         background: none;
         border: none;
