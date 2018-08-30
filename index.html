@@ -4,7 +4,7 @@ image: /favicon.png
 ---
 <section>
     {% assign front_page_posts = site.categories.projects |
-        concat:site.categories.experiences |
+        concat:site.experiences |
         sort: "date" |
         reverse |
         group_by: "present" |

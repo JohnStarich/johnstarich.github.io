@@ -27,9 +27,15 @@ collections:
   skills:
     layout: skill
     output: true
+  experiences:
+    output: true
 
 defaults:
   - scope:
       type: skills
     values:
       layout: skill
+  - scope:
+      type: experiences
+    values:
+      hidden: true
