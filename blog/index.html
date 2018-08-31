@@ -16,8 +16,12 @@ layout: default
                     {% include media.html file=asset %}
                 </a>
             {% endif %}
-            {{ post.excerpt | markdownify }}
-            {% if post.excerpt != post.content %}
+            {% assign slug = post.title | slugify %}
+            {% assign titleTag = '<h1 id="' | append: slug | append: '">' | append: post.title | append: '</h1>' %}
+            {% assign excerpt = post.excerpt | lstrip | remove_first: titleTag | lstrip %}
+            {% assign content = post.content | lstrip %}
+            {{ excerpt }}
+            {% if excerpt != content %}
                 <a class="read-more" href="{{ post.url }}">read more</a>
             {% endif %}
         </div>

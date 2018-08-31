@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<section>
+    <article class="post">
+        <h2>
+            <a class="subject" href="{{ page.url }}">{{ page.title }}</a>
+            <span class="time">{{ page.date | date: '%B %e, %Y' }}</span>
+        </h2>
+        {% if page.media %}
+            {% assign asset = page.media[0] %}
+            <a href="{{ page.url }}">
+                {% include media.html file=asset %}
+            </a>
+        {% endif %}
+        {{ content }}
+    </article>
+</section>

@@ -36,7 +36,7 @@ image: /favicon.png
                     {% include media.html file=asset %}
                 </a>
             {% endif %}
-            {{ post.excerpt | markdownify }}
+            {{ post.excerpt }}
             {% if post.excerpt != post.content %}
                 <a class="read-more" href="{{ post.url }}">read more</a>
             {% endif %}
