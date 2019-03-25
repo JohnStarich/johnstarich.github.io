@@ -54,6 +54,10 @@ article, section, p {
     letter-spacing: 0.02em;
 }
 
+pre {
+    overflow-x: scroll;
+}
+
 .media {
     background-repeat: no-repeat;
     background-position: center;
