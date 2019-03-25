@@ -2,12 +2,12 @@
 
 Scaling an application is hard, especially when you need to manage its important data yourself. One way to make this easier is by sharing the files across multiple servers -- no matter where it runs, the data will always be available.
 
-An important step in making highly available applications is setting up highly available data. With Docker, we will set up shared files with a volume plugin called Convoy.
+An important step in making highly available applications is setting up highly available data. With Docker, we will set up shared files with a volume plugin called [Convoy][convoy].
 
 In this tutorial I assume you already have 2 or more nodes in a Docker Swarm and an NFS v3 server set up. If you haven't set up a Docker Swarm yet, get at least 2 nodes ready by following these tutorials for [Docker setup][setup docker] and [Swarm setup][setup swarm].
 
 
-If you don't want to use NFS v3, that's okay --- [Convoy][convoy] supports multiple storage back-ends --- but you'll definitely need to use network attached storage. (Convoy's `devicemapper` back-end won't work here.) Also, I recommend avoiding Samba shares: Samba file permissions only support a single user ID, which wreaks havoc in containers that don't use the same ID.
+If you don't want to use NFS v3, that's okay --- Convoy supports multiple storage back-ends --- but you'll definitely need to use network attached storage. (Convoy's `devicemapper` back-end won't work here.) Also, I recommend avoiding Samba shares: Samba file permissions only support a single user ID, which wreaks havoc in containers that don't use the same ID.
 
 This tutorial's instructions are based on Ubuntu 18.10, but they _should_ work on most Docker installations.
 
