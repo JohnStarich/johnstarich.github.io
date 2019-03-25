@@ -16,7 +16,7 @@ image: /favicon.png
     {% for grouped_posts in front_page_posts %}
     {% for post in grouped_posts %}
         <article>
-            <h2>
+            <h1>
                 <a class="subject" href="{{ post.url }}">{{ post.title }}</a>
                 {% if post.category == "experiences" %}
                 <span class="company">{{ post.company }}</span>
@@ -28,7 +28,7 @@ image: /favicon.png
                     <span class="time">{{ post.start_date }}</span>
                     {% endif %}
                 {% endif %}
-            </h2>
+            </h1>
             <div class="article-excerpt">
             {% if post.media %}
                 {% assign asset = post.media[0] %}

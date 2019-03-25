@@ -3,10 +3,10 @@ layout: default
 ---
 <section>
     <article class="post">
-        <h2>
+        <h1>
             <a class="subject" href="{{ page.url }}">{{ page.title }}</a>
             <span class="time">{{ page.date | date: '%B %e, %Y' }}</span>
-        </h2>
+        </h1>
         {% if page.media %}
             {% assign asset = page.media[0] %}
             <a href="{{ page.url }}">

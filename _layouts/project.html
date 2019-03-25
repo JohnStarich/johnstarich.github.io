@@ -3,14 +3,14 @@ layout: default
 ---
 <section>
     <article>
-        <h2>
+        <h1>
             <a class="subject" href="{{ page.url }}">{{ page.title }}</a>
             {% if page.start_date and page.end_date %}
             <span class="time">{{ page.start_date }} &ndash; {{ page.end_date }}</span>
             {% elsif page.start_date %}
             <span class="time">{{ page.start_date }}</span>
             {% endif %}
-        </h2>
+        </h1>
         {% if page.media %}
             {% assign asset = page.media[0] %}
             <a href="{{ page.url }}">
