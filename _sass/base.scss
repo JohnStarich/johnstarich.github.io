@@ -54,8 +54,13 @@ article, section, p {
     letter-spacing: 0.02em;
 }
 
-pre {
+.highlight {
     overflow-x: scroll;
+    pre {
+        box-sizing: border-box;
+        padding: 0.5em 1em;
+        background-color: #F8F8F8;
+    }
 }
 
 .media {
