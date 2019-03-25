@@ -54,6 +54,14 @@ article, section, p {
     letter-spacing: 0.02em;
 }
 
+code.highlighter-rouge {
+    box-sizing: border-box;
+    padding: 0.125em 0.35em;
+    margin: 0 0.125em;
+    background-color: #EEE;
+    border-radius: 0.25em;
+}
+
 .highlight {
     overflow-x: scroll;
     pre {
