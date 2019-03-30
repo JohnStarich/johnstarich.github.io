@@ -13,12 +13,14 @@ $link-color: #08d;
 $helvetica: Helvetica, Arial, "Lucida Grande", sans-serif;
 $helvetica_neue: "Helvetica Neue", "Yantramanav", $helvetica;
 $helvetica-header-weight: 100;
+$helvetica-header2-weight: 200;
 $trebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $verdana: Verdana, Geneva, sans-serif;
 $georgia: Palatino, Georgia, "Times New Roman", serif;
 
 $header-font: $helvetica_neue;
 $header-weight: $helvetica-header-weight;
+$small-header-weight: $helvetica-header2-weight;
 $text-font: $georgia;
 $text-weight: 400;
 $link-weight: 400;
