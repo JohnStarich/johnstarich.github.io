@@ -17,14 +17,14 @@ I have reference material [on GitHub][github] and if you have any questions in t
 
 [setup docker]: https://docs.docker.com/engine/swarm/swarm-tutorial/
 [setup swarm]: https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
-[shared volumes]: Shared%20volumes%20in%20Docker.md
+[shared volumes]: {% link _posts/2019-03-24-Shared-volumes-in-Docker.md %}
 [github]: https://github.com/JohnStarich/home-container-cloud/tree/master/ingress
 
 ## “Layer 4” load balancer
 
 To use multiple nodes in a Swarm, you may need high availability. In other words, if you have servers A and B, but B is suddenly unplugged, then your cloud should keep working uninterrupted.
 
-One way to achieve basic availability is to set up a dumb [“layer 4”][L4] load balancer to direct incoming web traffic to multiple Swarm nodes. I grabbed a spare server and [installed nginx][install nginx] with a simple configuration. Nginx automatically detects failed connections and routes traffic away from failing nodes. Ideally, this server's only job is to load balance connections without interruption.
+One way to achieve basic availability is to set up a dumb [“layer 4”][L4] load balancer to direct incoming web traffic to multiple Swarm nodes. I grabbed a spare server and installed nginx with a simple configuration. Nginx automatically detects failed connections and routes traffic away from failing nodes. Ideally, this server's only job is to load balance connections without interruption.
 
 Let's get started by [installing nginx][install nginx]!
 
