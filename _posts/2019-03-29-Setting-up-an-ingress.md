@@ -15,7 +15,6 @@ I have reference material [on GitHub][github] and if you have any questions in t
 
 [setup docker]: https://docs.docker.com/engine/swarm/swarm-tutorial/
 [setup swarm]: https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
-[shared volumes]: {% link _posts/2019-03-24-Shared-volumes-in-Docker.md %}
 [github]: https://github.com/JohnStarich/home-container-cloud/tree/master/ingress
 
 ## “Layer 4” load balancer
@@ -329,3 +328,5 @@ You now have a fully-functional, highly available ingress. Now all you need are 
 If you have *any* questions please [open an issue here][new issues].
 
 [new issues]: https://github.com/JohnStarich/home-container-cloud/issues
+
+[shared volumes]: {% link _posts/2019-03-24-Shared-volumes-in-Docker.md %}
