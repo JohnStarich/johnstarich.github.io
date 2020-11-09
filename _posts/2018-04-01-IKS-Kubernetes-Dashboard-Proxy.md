@@ -3,8 +3,6 @@ layout: experience
 title: IKS Kubernetes Dashboard Proxy
 company: IBM
 start_date: April 2018
-end_date: Present
-present: true
 date:   2018-04-01 00:00:00 -0600
 category: experiences
 ---

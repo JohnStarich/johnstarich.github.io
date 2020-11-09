@@ -3,8 +3,6 @@ layout: experience
 title: IKS Logs & Metrics Forwarder
 company: IBM
 start_date: June 2017
-end_date: Present
-present: true
 date:   2017-06-20 00:00:00 -0600
 category: experiences
 ---
