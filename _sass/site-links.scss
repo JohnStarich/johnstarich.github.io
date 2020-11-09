@@ -4,7 +4,7 @@
     font-family: $header-font;
     font-weight: $link-weight;
     font-size: 0.9em;
-    margin: 0.5em;
+    margin: 0.25em 0;
 
     @media print {
         display: none;

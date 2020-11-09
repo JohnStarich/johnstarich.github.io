@@ -1,8 +1,8 @@
 # Site settings
 title: John Starich
-tagline: Full Stack Software Engineer
+tagline: Hacker. Explorer. Teacher.
 description: > # this means to ignore newlines until "baseurl:"
-  Full stack software engineer writing services for IBM Cloud. Currently works on the IBM Cloud Kubernetes Service and its supporting services.
+  John turns ideas into results, explores the outdoors, and guides others through the tech world. He currently works on the IBM Cloud Kubernetes Service and is actively programming in dozens of projects.
 email: johnstarich@johnstarich.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://johnstarich.com" # the base hostname & protocol for your site

@@ -1,13 +1,44 @@
 header {
-    &, h1, h2, h3, h4, h5, h6 {
-        text-align: center;
-    }
+    $header-weight: 500;
+    font-size: 0.85em;
+    display: flex;
+    justify-content: center;
+    margin: 2vh 1em;
 
-    padding: 10px;
-    padding-left: 20px;
+    &.index {
+        font-size: 1em;
+        margin: 8vh 1em;
+
+        .site-headshot {
+            height: 10em;
+            width: 10em;
+        }
+
+        @media (max-width: 35rem) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    }
 
     a {
         text-decoration: none;
+    }
+
+    .row > * {
+        margin: 0.5em;
+    }
+
+    @media (max-width: 20rem) {
+        &:not(.index) .row {
+            flex-direction: column;
+        }
+    }
+
+    .site-headshot {
+        height: 8em;
+        width: 8em;
+        clip-path: circle(47% at center);
     }
 
     .site-title {
@@ -31,13 +62,24 @@ header {
         margin: 0;
         padding: 0;
         font-family: $header-font;
-        font-size: 50px;
+        font-size: 2.5em;
         font-weight: $header-weight;
+        letter-spacing: 0.03rem;
     }
 
     .site-tagline {
-        margin: 0% 1%;
         font-size: 1.2em;
+        font-weight: $header-weight;
     }
+}
 
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
 }
