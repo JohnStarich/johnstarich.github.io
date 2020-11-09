@@ -1,6 +1,6 @@
 {% assign ext4 = include.file | slice: -4, 4 %}
 {% assign ext5 = include.file | slice: -5, 5 %}
-{% if ext4 == ".png" or ext4 == ".jpg" or ext5 == ".jpeg" %}
+{% if ext4 == ".png" or ext4 == ".jpg" or ext5 == ".jpeg" or ext4 == ".gif" %}
 <div class="media" style="background-image: url(/assets/{{include.file}});"></div>
 {% else %}
 Unknown file extension: {{include.file}}
