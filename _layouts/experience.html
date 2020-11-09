@@ -3,7 +3,14 @@ layout: default
 ---
 <section>
     <article>
-        <h1><a class="subject" href="{{ page.url }}">{{ page.title }}</a> <span class="company">{{ page.company }}</span> <span class="time">{{ page.start_date }} &ndash; {{ page.end_date }}</span></h1>
+        <h1>
+            <a class="subject" href="{{ page.url }}">{{ page.title }}</a> <span class="company">{{ page.company }}</span> <span class="time">
+                {% if page.start_date and page.end_date %}
+                    {{ page.start_date }} &ndash; {{ page.end_date }}
+                {% elsif page.start_date %}
+                    {{ page.start_date }}
+                {% endif %}
+            </span></h1>
         {{ content }}
     </article>
 </section>

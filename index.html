@@ -19,14 +19,12 @@ image: /favicon.png
             <h1>
                 <a class="subject" href="{{ post.url }}">{{ post.title }}</a>
                 {% if post.category == "experiences" %}
-                <span class="company">{{ post.company }}</span>
-                <span class="time">{{ post.start_date }} &ndash; {{ post.end_date }}</span>
-                {% else %}
-                    {% if post.start_date and post.end_date %}
+                    <span class="company">{{ post.company }}</span>
+                {% endif %}
+                {% if post.start_date and post.end_date %}
                     <span class="time">{{ post.start_date }} &ndash; {{ post.end_date }}</span>
-                    {% elsif post.start_date %}
+                {% elsif post.start_date %}
                     <span class="time">{{ post.start_date }}</span>
-                    {% endif %}
                 {% endif %}
             </h1>
             <div class="article-excerpt">
