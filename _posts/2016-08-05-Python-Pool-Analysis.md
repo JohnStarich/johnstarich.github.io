@@ -3,7 +3,8 @@ layout: project
 title: Python Pool Analysis
 start_date: August 2016
 date: 2016-08-05 00:00:00 -0600
-categories: projects explore
+category: projects
+tags: explore
 image: /assets/python-pool-performance/perf.png
 media: [python-pool-performance/perf.png]
 ---

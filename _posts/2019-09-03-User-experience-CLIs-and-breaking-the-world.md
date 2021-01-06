@@ -1,5 +1,5 @@
 ---
-categories: explore
+tags: explore
 ---
 
 # User experience, CLIs, and breaking the world

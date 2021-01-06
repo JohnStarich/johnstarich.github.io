@@ -1,5 +1,5 @@
 ---
-categories: teach
+tags: teach
 media: [/home-cloud/ingress-architecture.png]
 ---
 

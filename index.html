@@ -7,8 +7,9 @@ image: /favicon.png
         <div class="symbol">{% include hack.html %}</div>
         <h2>Hack</h2>
     </header>
-    {% include sort.html posts=site.categories.hack %}
-    {% for post in sorted_posts %}
+    {% assign tag_posts = site.posts | where: "tags", "hack" %}
+    {% include sort.html posts=tag_posts %}
+    {% for post in sorted_posts limit:2 %}
         {% include post-summary.html post=post %}
     {% endfor %}
 </section>
@@ -17,8 +18,9 @@ image: /favicon.png
         <div class="symbol">{% include explore.html %}</div>
         <h2>Explore</h2>
     </header>
-    {% include sort.html posts=site.categories.explore %}
-    {% for post in sorted_posts %}
+    {% assign tag_posts = site.posts | where: "tags", "explore" %}
+    {% include sort.html posts=tag_posts %}
+    {% for post in sorted_posts limit:2 %}
         {% include post-summary.html post=post %}
     {% endfor %}
 </section>
@@ -27,8 +29,9 @@ image: /favicon.png
         <div class="symbol">{% include teach.html %}</div>
         <h2>Teach</h2>
     </header>
-    {% include sort.html posts=site.categories.teach %}
-    {% for post in sorted_posts %}
+    {% assign tag_posts = site.posts | where: "tags", "teach" %}
+    {% include sort.html posts=tag_posts %}
+    {% for post in sorted_posts limit:2 %}
         {% include post-summary.html post=post %}
     {% endfor %}
 </section>

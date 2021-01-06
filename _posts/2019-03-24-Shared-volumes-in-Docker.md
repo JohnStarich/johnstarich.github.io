@@ -1,5 +1,5 @@
 ---
-categories: teach
+tags: teach
 ---
 
 # Shared volumes in Docker
