@@ -13,6 +13,8 @@
     --link-hover-color: #{lighten(#08d, 15%)};
     --code-background-color: #eee;
     --code-block-background-color: #{lighten(#eee, 3%)};
+    --accent-color: #83c;
+    --accent-highlight-color: #2ff;
 
     @media screen and (prefers-color-scheme: dark) {
         --base-color: #0f232b;
@@ -23,8 +25,11 @@
         --title-underline-color: #888894;
         --code-background-color: #{darken(#0f232b, 7%)};
         --code-block-background-color: #{lighten(#0f232b, 3%)};
+        --accent-color: #83c;
+        --accent-highlight-color: #6ff;
     }
 }
+
 
 /** Fonts */
 $helvetica: Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -60,3 +65,4 @@ $slideshow-height: 300px;
 @import "responsive";
 @import "site-links";
 @import "skills";
+@import "symbols";

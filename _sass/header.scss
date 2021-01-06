@@ -1,6 +1,6 @@
 @import "typer";
 
-header {
+body > header {
     $header-weight: 500;
     font-size: 0.85em;
     display: flex;

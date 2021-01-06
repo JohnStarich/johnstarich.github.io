@@ -1,0 +1,41 @@
+@import "circle";
+@import "orb";
+
+.hack {
+    $size: 10rem;
+    $tick-length: 0.5rem;
+    $tick-weight: 2px;
+    $animation-duration: 20s;
+    @include orbs($animation-duration/2, var(--accent-highlight-color), var(--accent-color));
+
+    height: $size;
+    width: $size;
+    perspective: 2 * $size;
+    transform: translate3d(0.4rem, 0.4rem, 0);
+
+    .circles {
+        height: $size;
+        width: $size;
+        transform-style: preserve-3d;
+        --rotate-transform: rotate3d(1, 0, 0, -20deg);
+        //animation: circle-spin 40s linear infinite;
+        transform: var(--rotate-transform) rotate3d(0, 1, 0, 67.5deg);
+    }
+
+    .circle {
+        @include circle-ticks(20, $size, $tick-length, $tick-weight, var(--text-color));
+        @include circle-glow($tick-length, var(--accent-color), var(--accent-highlight-color));
+        position: absolute;
+        border: $tick-weight solid var(--text-color);
+        animation: circle-spin $animation-duration linear infinite;
+        animation-name: circle-spin, circle-glow;
+
+        :nth-child(5n) {
+            --circle-tick-length: #{$tick-length * 1.5};
+        }
+    }
+
+    .circle1 {
+        --circle-spin-transform: rotate3d(0, 0, 1, 90deg) rotate3d(0, 1, 0, 90deg);
+    }
+}

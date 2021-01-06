@@ -1,0 +1,56 @@
+@mixin circle-ticks($item-count, $circle-size, $item-length, $item-weight, $item-color) {
+    position: relative;
+    width: $circle-size;
+    height: $circle-size;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+
+    .tick {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        --tick-length: var(--circle-tick-length, #{$item-length});
+        width: var(--tick-length);
+        height: var(--tick-length);
+        margin: calc(var(--tick-length) / -2);
+
+        $angle: (360 / $item-count);
+        $rot: 0;
+
+        @for $i from 0 to $item-count {
+            &#{$i} {
+                background: linear-gradient($item-color, $item-color) no-repeat center/$item-weight 100%;
+                transform:
+                    rotate($rot * 1deg)            // put tick into slot on circumfrence
+                    translateX(calc(var(--tick-length) / -2)) // pull ticks into center
+                    translate($circle-size / 2)    // move from center to circle's edge
+                    rotate(90deg)                  // rotate linear gradient to point at center
+                    ;
+            }
+
+            $rot: $rot + $angle;
+        }
+    }
+
+    --circle-spin-transform: ;
+
+    @keyframes circle-spin {
+        0%   { transform: var(--circle-spin-transform) rotate3d(0, 0, 1, 360deg); }
+        25%  { transform: var(--circle-spin-transform) rotate3d(0, 0, 1, 270deg); }
+        50%  { transform: var(--circle-spin-transform) rotate3d(0, 0, 1, 180deg); }
+        75%  { transform: var(--circle-spin-transform) rotate3d(0, 0, 1, 90deg); }
+        100% { transform: var(--circle-spin-transform) rotate3d(0, 0, 1, 0); }
+    }
+}
+
+@mixin circle-glow($length, $color, $highlight-color) {
+    @keyframes circle-glow {
+        0%   { box-shadow: inset 0 0 $length $length/8 $color; }
+        4%   { box-shadow: inset 0 0 $length $length/8 $highlight-color; }
+        50%  { box-shadow: inset 0 0 $length $length/8 $color; }
+        54%  { box-shadow: inset 0 0 $length $length/8 $highlight-color; }
+        100% { box-shadow: inset 0 0 $length $length/8 $color; }
+    }
+}

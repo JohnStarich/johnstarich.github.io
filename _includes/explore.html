@@ -1,0 +1,16 @@
+<div class="explore">
+    {% for i in (0..3) %}
+        <div class="circle-container circle-container{{i}}">
+            <div class="circle circle{{i}}">
+                {% for j in (0..19) %}
+                    <div class="tick tick{{j}}"></div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    <div class="orbs">
+        <div class="orb orb0"></div>
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+    </div>
+</div>

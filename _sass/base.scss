@@ -143,6 +143,10 @@ section {
     }
 }
 
+section + section {
+    margin-top: 10vh;
+}
+
 article {
     display: flex;
     flex-direction: column;
@@ -254,6 +258,7 @@ article {
             font-size: 0.7em;
             white-space: nowrap;
             color: var(--text-color);
+            letter-spacing: -0.03em;
             @media print {
                 color: #000;
                 flex-grow: 1;

@@ -1,0 +1,113 @@
+@import "circle";
+
+.teach {
+    $size: 10rem;
+    $tick-length: 0.4rem;
+    $tick-weight: 2px;
+    $animation-duration: 20s;
+
+    height: $size;
+    width: $size;
+    perspective: 4 * $size;
+
+    transform-style: preserve-3d;
+    transform: translate3d(0.3rem, 2.5rem, 0) rotate3d(1, 0, 0, 70deg);
+    transition: transform 1s;
+
+    .circles {
+        position: absolute;
+        height: $size;
+        width: $size*1.1;
+
+        $mask-image:
+            radial-gradient(circle at 56% 100%, transparent 20%, rgba(255, 0, 0, 1) 30%),
+            radial-gradient(circle at 33% 100%, transparent 40%, rgba(0, 255, 255, 1) 40%),
+            ;
+        -webkit-mask-image: $mask-image;
+        mask-image: $mask-image;
+    }
+
+    .circle {
+        @include circle-ticks(20, $size, $tick-length, $tick-weight, var(--text-color));
+        @include circle-glow($tick-length, var(--accent-color), var(--accent-highlight-color));
+        position: absolute;
+        border: $tick-weight solid var(--text-color);
+        animation: circle-spin $animation-duration linear infinite;
+        animation-name: circle-spin, circle-glow;
+        transform: var(--spin-transform);
+
+        :nth-child(5n) {
+            --circle-tick-length: #{$tick-length * 1.5};
+        }
+    }
+
+    .compass {
+        position: absolute;
+        $leg-angle: 26deg;
+        $leg-length: $size*3/5;
+        $leg-width: $leg-length * 0.4383711468;   // $leg-length * sin($leg-angle)
+        $leg-height: $leg-length * 0.8987940463;  // $leg-length * cos($leg-angle)
+        $radius: $size/2;
+        height: $size;
+        width: $radius;
+        transform:
+            rotate3d(1, 0, 0, 90deg)      // set up vertically
+            translate3d(0, $radius, 0)    // position y=0 over circle's center
+            translate3d($radius/2, 0, 0)  // position x=0 over compass's center
+            rotate3d(0, 1, 0, 48deg)      // rotate toward viewer on circle
+            ;
+        transition: transform 1s;
+
+        > * {
+            position: absolute;
+            height: $size;
+            width: $size;
+        }
+
+        .pin {
+            $pin-size: 0.4rem;
+            width: $pin-size;
+            height: $pin-size;
+            background-color: var(--text-color);
+            border-radius: 100%;
+            transform:
+                translate3d(-50%, -50%, 0)              // center circle on origin
+                translate3d($radius/2, 0, 0)            // center on compass
+                translate3d($leg-width, $leg-height, 0) // place on top
+                ;
+        }
+
+        .arc {
+            $arc-size: 2rem;
+            width: $arc-size;
+            height: $arc-size;
+            border: 0.15rem solid transparent;
+            border-bottom-color: var(--text-color);
+            border-radius: 100%;
+            transform:
+                translate3d(-50%, -50%, 0)              // center circle on origin
+                translate3d($radius/2, 0, 0)            // center on compass
+                translate3d($leg-width, $leg-height, 0) // place on top
+                rotate3d(0, 0, 1, 180deg)               // fix bottom border on correct side
+                translate3d(0, $leg-height/8, 0)        // shift arc down a bit
+                ;
+        }
+
+        .leg {
+            height: $leg-length;
+            width: $radius;
+            background: linear-gradient(var(--text-color), var(--text-color)) no-repeat center/$tick-weight 100%;
+            transform-origin: top center; // use center of circle as origin
+            transform: rotate3d(0, 0, 1, -$leg-angle);
+            transition: transform 1s;
+        }
+
+        .leg2 {
+            transform:
+                translate3d($leg-width*2, 0, 0)  // move to center of compass
+                scale3d(-1, 1, 1)                // then reflect on x axis
+                rotate3d(0, 0, 1, -$leg-angle)   // use same rotation as leg1
+                ;
+        }
+    }
+}

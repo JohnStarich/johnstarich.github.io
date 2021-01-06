@@ -1,0 +1,75 @@
+@import "circle";
+@import "orb";
+
+.explore {
+    $size: 10rem;
+    $tick-length: 0.35rem;
+    $tick-weight: 0.2rem;
+    $animation-duration: 20s;
+
+    @include orbs($animation-duration/2, var(--accent-highlight-color), var(--accent-color));
+
+    height: $size;
+    width: $size;
+    perspective: 4 * $size;
+    perspective-origin: bottom left;
+    margin-left: 1em;
+    margin-right: 2em;
+    margin-top: 0.5em;
+    transform-style: preserve-3d;
+    transform:
+        translate3d(-2rem, 2rem, 0)
+        rotate3d(0, 0, 1, -45deg)
+        rotate3d(0, 1, 0, -60deg)
+        translate3d(-6rem, 0, 0)
+        ;
+        transition: transform 1s;
+
+    .orbs {
+        height: $size;
+        width: $size;
+        perspective: none;
+
+        position: absolute;
+        transform:
+            translate3d(-1.5rem, 0, 0)
+            rotate3d(0, 1, 0, 60deg)
+            rotate3d(0, 0, 1, 45deg)
+            ;
+    }
+
+    .circle-container {
+        position: absolute;
+        width: $size;
+        height: $size;
+
+        @keyframes boom {
+            0%   { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 0, 0); }
+            10%  { opacity: 1; }
+            100% { opacity: 0; transform: translate3d(20rem, 0, 0); }
+        }
+        animation: boom $animation-duration cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+    }
+
+    .circle {
+        @include circle-ticks(20, $size, $tick-length, $tick-weight, var(--text-color));
+        @include circle-glow($tick-length, var(--accent-color), var(--accent-highlight-color));
+        position: absolute;
+        border: $tick-weight solid var(--text-color);
+        animation: circle-spin $animation-duration linear infinite;
+        animation-name: circle-spin, circle-glow;
+
+        :nth-child(5n) {
+            --circle-tick-length: #{$tick-length * 1.5};
+        }
+    }
+
+    .circle1, .circle3 {
+        animation-direction: reverse, normal;
+    }
+
+    .circle-container0 { animation-delay: $animation-duration * -0/4; }
+    .circle-container1 { animation-delay: $animation-duration * -1/4; }
+    .circle-container2 { animation-delay: $animation-duration * -2/4; }
+    .circle-container3 { animation-delay: $animation-duration * -3/4; }
+}

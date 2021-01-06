@@ -1,10 +1,48 @@
 ---
 layout: default
+image: /favicon.png
 ---
 <section>
-    {% assign portfolio_posts = site.categories.projects | concat: site.categories.experiences | concat:site.experiences %}
-    {% include sort.html posts=portfolio_posts %}
+    <header>
+        <div class="symbol">{% include hack.html %}</div>
+        <h2>Hack</h2>
+    </header>
+    {% include sort.html posts=site.categories.hack %}
     {% for post in sorted_posts %}
         {% include post-summary.html post=post %}
     {% endfor %}
 </section>
+<section>
+    <header>
+        <div class="symbol">{% include explore.html %}</div>
+        <h2>Explore</h2>
+    </header>
+    {% include sort.html posts=site.categories.explore %}
+    {% for post in sorted_posts %}
+        {% include post-summary.html post=post %}
+    {% endfor %}
+</section>
+<section>
+    <header>
+        <div class="symbol">{% include teach.html %}</div>
+        <h2>Teach</h2>
+    </header>
+    {% include sort.html posts=site.categories.teach %}
+    {% for post in sorted_posts %}
+        {% include post-summary.html post=post %}
+    {% endfor %}
+</section>
+
+<script>
+// optimize animations by pausing them off-screen
+const visibleObserver = new IntersectionObserver(entries => {
+  entries.forEach(e =>
+    e.target.classList.toggle('pause-animation', !e.isIntersecting))
+})
+
+function init() {
+  visibleObserver.disconnect()
+  window.document.querySelectorAll('section header .symbol').forEach(s => visibleObserver.observe(s))
+}
+init()
+</script>

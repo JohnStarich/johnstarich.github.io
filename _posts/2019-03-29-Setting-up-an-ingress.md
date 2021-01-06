@@ -1,14 +1,13 @@
 ---
 categories: teach
+media: [/home-cloud/ingress-architecture.png]
 ---
 
 # Setting up an ingress
 
 Web services running on the same network can be difficult to set up correctly, especially if you want all of them to work on an external network. In this tutorial, I will guide you through setting up a Docker Swarm to route traffic to the appropriate containers, automatically.
 
-There are three parts to get your cloud ready for web services: a load balancer to spread connections to available servers, an ingress router to direct traffic to containers, and DNS to point local traffic to the right IP addresses. Here's a quick layout:
-
-![Ingress Architecture](/assets/home-cloud/ingress-architecture.png)
+There are three parts to get your cloud ready for web services: a load balancer to spread connections to available servers, an ingress router to direct traffic to containers, and DNS to point local traffic to the right IP addresses. See the above diagram for a quick layout.
 
 
 We'll set up a couple things to bootstrap your network of web services. I assume you already have a Docker Swarm ([Docker][setup docker] & [Swarm][setup swarm]) and shared volumes ([tutorial][shared volumes]) set up on at least one node. I also highly recommend another server as a load balancer for higher availability -- a Raspberry Pi is fine -- but you can skip it if you're strapped for cash.

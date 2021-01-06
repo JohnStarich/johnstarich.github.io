@@ -1,0 +1,55 @@
+@mixin orbs($animation-duration, $accent-highlight-color, $accent-color) {
+    @keyframes orb {
+        0%   { transform: var(--orb-transform) translate(0rem, -0.2rem); background-color: $accent-color; }
+        8%   { background-color: $accent-highlight-color; }
+        33%  { transform: var(--orb-transform) translate(0.4rem, 0.6rem); }
+        66%  { transform: var(--orb-transform) translate(-0.5rem, 0.2rem); background-color: $accent-color; }
+        100% { transform: var(--orb-transform) translate(0rem, -0.2rem); background-color: $accent-color; }
+    }
+
+    .orb {
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        border-radius: 50%;
+        animation: orb $animation-duration cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+
+        &:before {
+            content: "\00a0"; // fix Safari clipping issue on circles
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background-color: inherit;
+            opacity: 0.5;
+        }
+    }
+
+    .orb0 {
+        @include orb(0.65rem, 0.9rem, -0.4rem, -0.525rem, $accent-highlight-color);
+        --orb-transform: rotate(0);
+    }
+    .orb1 {
+        @include orb(0.5rem, 0.8rem, -0.5rem, 0.4rem, $accent-highlight-color);
+        --orb-transform: rotate(190deg);
+    }
+    .orb2 {
+        @include orb(0.75rem, 1rem, 0.4rem, 0.35rem, $accent-highlight-color);
+        --orb-transform: rotate(110deg);
+    }
+}
+
+@mixin orb($size, $glow-size, $off-x, $off-y, $color) {
+    margin-top: $off-y - $size/2;
+    margin-left: $off-x - $size/2;
+    height: $size;
+    width:  $size;
+    background-color: $color;
+    &:before {
+        height: $glow-size;
+        width: $glow-size;
+    }
+}
+

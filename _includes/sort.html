@@ -1,3 +1,5 @@
+{% if include.posts %}
+
 {% assign sorted_grouped_posts = include.posts |
     sort: "date" |
     reverse |
@@ -10,3 +12,5 @@
 {% for posts in sorted_grouped_posts %}
 {% assign sorted_posts = sorted_posts | concat: posts %}
 {% endfor %}
+
+{% endif %}
