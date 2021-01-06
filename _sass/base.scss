@@ -7,7 +7,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, body {
-    color: $text-color;
+    color: var(--text-color);
     @media print {
         color: #000;
     }
@@ -35,14 +35,14 @@ body, article, section, p {
 body {
     margin: 0;
     width: 100%;
-    background-color: $body-background;
+    background-color: var(--body-background);
     @media print {
         background: none;
     }
 }
 
 a {
-    color: $link-color;
+    color: var(--link-color);
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -62,7 +62,7 @@ code.highlighter-rouge {
     box-sizing: border-box;
     padding: 0.125em 0.35em;
     margin: 0 0.125em;
-    background-color: #EEE;
+    background-color: var(--code-block-background-color);
     border-radius: 0.25em;
 }
 
@@ -71,7 +71,7 @@ code.highlighter-rouge {
         overflow-x: scroll;
         box-sizing: border-box;
         padding: 0.5em 1em;
-        background-color: #F8F8F8;
+        background-color: var(--code-background-color);
     }
 }
 
@@ -107,7 +107,7 @@ code.highlighter-rouge {
         margin: 5px;
 
         path {
-            fill: #fff;
+            fill: var(--text-color);
             @media print {
                 fill: #000;
             }
@@ -151,7 +151,7 @@ article {
     margin: 1.25em;
     border-radius: 2px;
     text-align: left;
-    background-color: $article-background;
+    background-color: var(--article-background);
     max-width: 40em;
 
     @media (max-width: 40em) {
@@ -177,17 +177,14 @@ article {
         }
     }
 
-    $read-more-color: $link-color;
-    $read-more-underline-color: darken($read-more-color, 10%);
-
     .read-more {
         margin-top: auto;
         font-style: italic;
         font-size: 0.85em;
         font-weight: 100;
-        color: $text-color;
-        -webkit-text-decoration-color: $read-more-underline-color;
-        text-decoration-color: $read-more-underline-color;
+        color: var(--text-color);
+        -webkit-text-decoration-color: var(--link-underline-color);
+        text-decoration-color: var(--link-underline-color);
         @media print {
             display: none;
         }
@@ -197,12 +194,12 @@ article {
     }
 
     a.read-more {
-        color: $read-more-color;
+        color: var(--link-color);
 
         &:hover {
-            color: lighten($read-more-color, 15%);
-            -webkit-text-decoration-color: $read-more-underline-color;
-            text-decoration-color: $read-more-underline-color;
+            color: var(--link-hover-color);
+            -webkit-text-decoration-color: var(--link-underline-color);
+            text-decoration-color: var(--link-underline-color);
         }
     }
 
@@ -241,7 +238,7 @@ article {
                 content: "\2013";
                 margin-right: 0.3em;
                 font-weight: $header-weight;
-                color: $text-color;
+                color: var(--text-color);
                 @media print {
                     color: #000;
                 }
@@ -256,7 +253,7 @@ article {
         .time {
             font-size: 0.7em;
             white-space: nowrap;
-            color: darken($text-color, 20%);
+            color: var(--text-color);
             @media print {
                 color: #000;
                 flex-grow: 1;
@@ -267,9 +264,9 @@ article {
         padding-bottom: 5px;
         margin: 0;
         margin-bottom: 2%;
-        font-weight: $header-weight;
+        font-weight: var(--header-weight);
         width: 100%;
-        border-bottom: 1px solid $highlight-color;
+        border-bottom: 1px solid var(--highlight-color);
         @media print {
             border-color: #000;
         }

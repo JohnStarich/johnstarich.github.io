@@ -43,25 +43,24 @@ header {
 
     .site-title {
         a {
-            color: $highlight-color;
+            color: var(--highlight-color);
 
             &:hover {
-                $title-hover-color: lighten($highlight-color, 80%);
-                -webkit-text-decoration-color: $title-hover-color;
-                text-decoration-color: $title-hover-color;
+                -webkit-text-decoration-color: var(--title-underline-color);
+                text-decoration-color: var(--title-underline-color);
             }
 
             @media print {
                 color: #000
             }
         }
-        color: $highlight-color;
+        color: var(--highlight-color);
         @media print {
             color: #000;
         }
         margin: 0;
         padding: 0;
-        font-family: $header-font;
+        font-family: $title-font;
         font-size: 2.5em;
         font-weight: $header-weight;
         letter-spacing: 0.03rem;
@@ -69,7 +68,7 @@ header {
 
     .site-tagline {
         font-size: 1.2em;
-        font-weight: $header-weight;
+        font-weight: 600;
     }
 }
 

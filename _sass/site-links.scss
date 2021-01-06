@@ -2,7 +2,7 @@
 
 .site-links {
     font-family: $header-font;
-    font-weight: $link-weight;
+    font-weight: $header-weight;
     font-size: 0.9em;
     margin: 0.25em 0;
 
@@ -11,7 +11,8 @@
     }
 
     a {
-        font-weight: $link-weight;
+        font-weight: 800;
+        letter-spacing: 0.03em;
         &:hover {
             text-decoration: underline;
         }

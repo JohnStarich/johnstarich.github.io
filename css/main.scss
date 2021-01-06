@@ -1,13 +1,30 @@
 ---
 ---
 
-$base-color: #ffffff;
-$text-color: #0f232b;
-$highlight-color: #000000;
-$body-background: darken($base-color, 4%);
-$article-background: $base-color;
-$header-background: $base-color;
-$link-color: #08d;
+:root {
+    --base-color: #fff;
+    --text-color: #0f232b;
+    --highlight-color: #000;
+    --body-background: #{darken(#fff, 4%)};
+    --article-background: #fff;
+    --title-underline-color: #{lighten(#000, 80%)};
+    --link-color: #08d;
+    --link-underline-color: #{darken(#08d, 10%)};
+    --link-hover-color: #{lighten(#08d, 15%)};
+    --code-background-color: #eee;
+    --code-block-background-color: #{lighten(#eee, 3%)};
+
+    @media screen and (prefers-color-scheme: dark) {
+        --base-color: #0f232b;
+        --text-color: #fff;
+        --highlight-color: #fff;
+        --body-background: #{lighten(#000, 4%)};
+        --article-background: #111116;
+        --title-underline-color: #888894;
+        --code-background-color: #{darken(#0f232b, 7%)};
+        --code-block-background-color: #{lighten(#0f232b, 3%)};
+    }
+}
 
 /** Fonts */
 $helvetica: Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -17,16 +34,20 @@ $helvetica-header2-weight: 200;
 $trebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $verdana: Verdana, Geneva, sans-serif;
 $georgia: Palatino, Georgia, "Times New Roman", serif;
+$monospace: "Courier New", Courier, monospace;
+$monospace-title: source-code-pro, Menlo, Monaco, Consolas, $monospace;
+$monospace-header-weight: 500;
 
-$header-font: $helvetica_neue;
-$header-weight: $helvetica-header-weight;
+$header-font: $monospace;
+$header-weight: $monospace-header-weight;
+$title-font: $monospace-title;
 $small-header-weight: $helvetica-header2-weight;
 $text-font: $georgia;
 $text-weight: 400;
 $link-weight: 400;
 
 /** Slideshow */
-$button-color: $text-color;
+$button-color: var(--text-color);
 $button-size: 3em;
 $button-width: 5%;
 $slideshow-height: 300px;
