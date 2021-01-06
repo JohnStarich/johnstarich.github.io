@@ -3,7 +3,7 @@ layout: project
 title: Cognitive Bias
 start_date: June 2018
 date: 2018-06-07 00:00:00 -0600
-category: projects
+categories: projects explore
 image: /assets/cognitive-bias/game-screenshot.png
 media: [cognitive-bias/game-screenshot.png]
 ---

@@ -1,3 +1,7 @@
+---
+categories: teach
+---
+
 # Setting up an ingress
 
 Web services running on the same network can be difficult to set up correctly, especially if you want all of them to work on an external network. In this tutorial, I will guide you through setting up a Docker Swarm to route traffic to the appropriate containers, automatically.

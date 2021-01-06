@@ -1,3 +1,7 @@
+---
+categories: explore
+---
+
 # User experience, CLIs, and breaking the world
 
 Starting at the end of last year, we put a plan in motion to revamp the CLI for the [IBM Cloud Kubernetes Service][IKS]. We focused on improving the user experience and overhauling the code. The key is to break compatibility, but surprise no one.

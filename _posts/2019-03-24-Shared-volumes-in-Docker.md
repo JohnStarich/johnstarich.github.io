@@ -1,3 +1,7 @@
+---
+categories: teach
+---
+
 # Shared volumes in Docker
 
 Scaling an application is hard, especially when you need to manage its important data yourself. One way to make this easier is by sharing the files across multiple servers -- no matter where it runs, the data will always be available.
