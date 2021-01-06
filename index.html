@@ -2,39 +2,24 @@
 layout: default
 image: /favicon.png
 ---
-<section>
-    <header>
-        <div class="symbol">{% include hack.html %}</div>
-        <h2>Hack</h2>
-    </header>
-    {% assign tag_posts = site.posts | where: "tags", "hack" %}
-    {% include sort.html posts=tag_posts %}
-    {% for post in sorted_posts limit:2 %}
-        {% include post-summary.html post=post %}
-    {% endfor %}
-</section>
-<section>
-    <header>
-        <div class="symbol">{% include explore.html %}</div>
-        <h2>Explore</h2>
-    </header>
-    {% assign tag_posts = site.posts | where: "tags", "explore" %}
-    {% include sort.html posts=tag_posts %}
-    {% for post in sorted_posts limit:2 %}
-        {% include post-summary.html post=post %}
-    {% endfor %}
-</section>
-<section>
-    <header>
-        <div class="symbol">{% include teach.html %}</div>
-        <h2>Teach</h2>
-    </header>
-    {% assign tag_posts = site.posts | where: "tags", "teach" %}
-    {% include sort.html posts=tag_posts %}
-    {% for post in sorted_posts limit:2 %}
-        {% include post-summary.html post=post %}
-    {% endfor %}
-</section>
+{% assign post_limit = 2 %}
+{% assign tags = "hack explore teach" | split: " " %}
+{% for tag in tags %}
+    <section>
+        <header>
+            <div class="symbol">{% include {{tag}}.html %}</div>
+            <h2>{{tag | capitalize}}</h2>
+        </header>
+        {% assign tag_posts = site.posts | where: "tags", tag %}
+        {% include sort.html posts=tag_posts %}
+        {% for post in sorted_posts limit:post_limit %}
+            {% include post-summary.html post=post %}
+        {% endfor %}
+        {% if sorted_posts.size > post_limit %}
+            <div class="more-articles"><a aria-label="show more articles" href="{% link blog/index.html %}">&#xFF0B;</a></div>
+        {% endif %}
+    </section>
+{% endfor %}
 
 <script>
 // optimize animations by pausing them off-screen

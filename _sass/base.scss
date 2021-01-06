@@ -308,3 +308,29 @@ article {
     from { visibility: visible; }
     to   { visibility: hidden; }
 }
+
+.more-articles {
+    padding-top: 0;
+    width: 100%;
+
+    a {
+        margin: 1em auto;
+        display: block;
+        font-size: 1.5em;
+        text-decoration: none;
+        padding: 0.3em;
+        width:  1em;
+        height: 1em;
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+        border-radius: 100%;
+        line-height: 125%;
+        opacity: 0.3;
+        transition: opacity 0.2s;
+        background: none;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
