@@ -1,3 +1,5 @@
+@import "typer";
+
 header {
     $header-weight: 500;
     font-size: 0.85em;
@@ -17,6 +19,10 @@ header {
         @media (max-width: 35rem) {
             .row {
                 flex-direction: column;
+            }
+
+            .col {
+                align-items: center;
             }
         }
     }
@@ -42,8 +48,22 @@ header {
     }
 
     .site-title {
+        color: var(--highlight-color);
+        @media print {
+            color: #000;
+        }
+        margin: 0;
+        margin-left: -0.05em;
+        margin-bottom: 0.15em;
+        padding: 0;
+        font-family: $title-font;
+        font-size: 2.25em;
+        font-weight: $header-weight;
+
         a {
             color: var(--highlight-color);
+            $type-duration: 2s;
+            @include typer(var(--highlight-color), str-length("John Starich_") + 5, $type-duration); // add more for slight delay of first letter
 
             &:hover {
                 -webkit-text-decoration-color: var(--title-underline-color);
@@ -53,22 +73,19 @@ header {
             @media print {
                 color: #000
             }
+
+            .blink {
+                color: var(--text-color);
+                visibility: hidden;
+                animation-delay: $type-duration;
+            }
         }
-        color: var(--highlight-color);
-        @media print {
-            color: #000;
-        }
-        margin: 0;
-        padding: 0;
-        font-family: $title-font;
-        font-size: 2.5em;
-        font-weight: $header-weight;
-        letter-spacing: 0.03rem;
     }
 
     .site-tagline {
         font-size: 1.2em;
         font-weight: 600;
+        letter-spacing: 0.03em;
     }
 }
 

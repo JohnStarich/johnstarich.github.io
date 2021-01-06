@@ -294,3 +294,12 @@ article {
         }
     }
 }
+
+.blink {
+    animation: blink 2s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    from { visibility: visible; }
+    to   { visibility: hidden; }
+}
