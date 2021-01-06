@@ -4,28 +4,7 @@ layout: default
 <section>
 {% assign blog_posts = paginator.posts %}
 {% for post in blog_posts %}
-    <article class="post post-excerpt">
-        <h1>
-            <a class="subject" href="{{ post.url }}">{{ post.title }}</a>
-            <span class="time">{{ post.date | date: '%B %e, %Y' }}</span>
-        </h1>
-        <div class="article-excerpt">
-            {% if post.media %}
-                {% assign asset = post.media[0] %}
-                <a class="media-link" href="{{ post.url }}">
-                    {% include media.html file=asset %}
-                </a>
-            {% endif %}
-            {% assign slug = post.title | slugify %}
-            {% assign titleTag = '<h1 id="' | append: slug | append: '">' | append: post.title | append: '</h1>' %}
-            {% assign excerpt = post.excerpt | lstrip | remove_first: titleTag | lstrip %}
-            {% assign content = post.content | lstrip %}
-            {{ excerpt }}
-            {% if excerpt != content %}
-                <a class="read-more" href="{{ post.url }}">read more</a>
-            {% endif %}
-        </div>
-    </article>
+    {% include post-summary.html post=post use_day=true %}
 {% endfor %}
     <div class="pagination">
     {% if paginator.total_pages > 1 %}

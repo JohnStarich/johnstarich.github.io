@@ -1,45 +1,10 @@
 ---
 layout: default
-image: /favicon.png
 ---
 <section>
-    {% assign front_page_posts = site.categories.projects |
-        concat: site.categories.experiences |
-        concat:site.experiences |
-        sort: "date" |
-        reverse |
-        group_by: "present" |
-        sort: "name" |
-        reverse |
-        map: "items"
-    %}
-    {% for grouped_posts in front_page_posts %}
-    {% for post in grouped_posts %}
-        <article>
-            <h1>
-                <a class="subject" href="{{ post.url }}">{{ post.title }}</a>
-                {% if post.category == "experiences" %}
-                    <span class="company">{{ post.company }}</span>
-                {% endif %}
-                {% if post.start_date and post.end_date %}
-                    <span class="time">{{ post.start_date }} &ndash; {{ post.end_date }}</span>
-                {% elsif post.start_date %}
-                    <span class="time">{{ post.start_date }}</span>
-                {% endif %}
-            </h1>
-            <div class="article-excerpt">
-            {% if post.media %}
-                {% assign asset = post.media[0] %}
-                <a class="media-link" href="{{ post.url }}">
-                    {% include media.html file=asset %}
-                </a>
-            {% endif %}
-            {{ post.excerpt }}
-            {% if post.excerpt != post.content %}
-                <a class="read-more" href="{{ post.url }}">read more</a>
-            {% endif %}
-            </div>
-        </article>
-    {% endfor %}
+    {% assign portfolio_posts = site.categories.projects | concat: site.categories.experiences | concat:site.experiences %}
+    {% include sort.html posts=portfolio_posts %}
+    {% for post in sorted_posts %}
+        {% include post-summary.html post=post %}
     {% endfor %}
 </section>

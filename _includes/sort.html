@@ -1,0 +1,12 @@
+{% assign sorted_grouped_posts = include.posts |
+    sort: "date" |
+    reverse |
+    group_by: "present" |
+    sort: "name" |
+    reverse |
+    map: "items"
+%}
+{% assign sorted_posts = '' | split: '' %}
+{% for posts in sorted_grouped_posts %}
+{% assign sorted_posts = sorted_posts | concat: posts %}
+{% endfor %}

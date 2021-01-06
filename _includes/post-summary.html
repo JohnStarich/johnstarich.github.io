@@ -1,0 +1,29 @@
+<article>
+    <h1>
+        <a class="subject" href="{{ include.post.url }}">{{ include.post.title }}</a>
+        {% if include.post.category == "experiences" %}
+            <span class="company">{{ include.post.company }}</span>
+        {% endif %}
+        {% if include.use_day %}
+            <span class="time">{{ post.date | date: '%B %e, %Y' }}</span>
+        {% elsif include.post.start_date and include.post.end_date %}
+            <span class="time">{{ include.post.start_date }} &ndash; {{ include.post.end_date }}</span>
+        {% elsif include.post.start_date %}
+            <span class="time">{{ include.post.start_date }}</span>
+        {% else %}
+            <span class="time">{{ post.date | date: '%B %e, %Y' }}</span>
+        {% endif %}
+    </h1>
+    <div class="article-excerpt">
+    {% if include.post.media %}
+        {% assign asset = include.post.media[0] %}
+        <a class="media-link" href="{{ include.post.url }}">
+            {% include media.html file=asset %}
+        </a>
+    {% endif %}
+    {{ include.post.excerpt }}
+    {% if include.post.excerpt != include.post.content %}
+        <a class="read-more" href="{{ include.post.url }}">read more</a>
+    {% endif %}
+    </div>
+</article>
