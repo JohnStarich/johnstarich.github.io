@@ -3,16 +3,18 @@ section {
     max-width: $section-width;
 
     @media screen {
-        @media (max-width: $section-width) {
-            width: 100%;
-        }
+        &.cols-2 {
+            @media (max-width: $section-width) {
+                width: 100%;
+            }
 
-        @media (min-width: $section-width) {
-            article:not(:only-child) {
-                max-width: 30em;
-                .company:before {
-                    content: "\a";
-                    white-space: pre;
+            @media (min-width: $section-width) {
+                article:not(:only-child) {
+                    max-width: 30em;
+                    .company:before {
+                        content: "\a";
+                        white-space: pre;
+                    }
                 }
             }
         }

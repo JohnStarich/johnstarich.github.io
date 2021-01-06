@@ -334,3 +334,12 @@ article {
         }
     }
 }
+
+section .articles {
+    display: flex;
+    flex-direction: column;
+
+    article.featured-media + article:not(.featured-media) {
+        order: -1;
+    }
+}

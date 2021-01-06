@@ -10,14 +10,16 @@ image: /favicon.png
             <div class="symbol">{% include {{tag}}.html %}</div>
             <h2>{{tag | capitalize}}</h2>
         </header>
-        {% assign tag_posts = site.posts | where: "tags", tag %}
-        {% include sort.html posts=tag_posts %}
-        {% for post in sorted_posts limit:post_limit %}
-            {% include post-summary.html post=post %}
-        {% endfor %}
-        {% if sorted_posts.size > post_limit %}
-            <div class="more-articles"><a aria-label="show more articles" href="{% link blog/index.html %}">&#xFF0B;</a></div>
-        {% endif %}
+        <div class="articles">
+            {% assign tag_posts = site.posts | where: "tags", tag %}
+            {% include sort.html posts=tag_posts %}
+            {% for post in sorted_posts limit:post_limit %}
+                {% include post-summary.html post=post %}
+            {% endfor %}
+            {% if sorted_posts.size > post_limit %}
+                <div class="more-articles"><a aria-label="show more articles" href="{% link blog/index.html %}">&#xFF0B;</a></div>
+            {% endif %}
+        </div>
     </section>
 {% endfor %}
 

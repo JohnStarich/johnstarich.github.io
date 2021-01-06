@@ -1,7 +1,7 @@
 {% if include.wordy != true %}
     {% assign concise = true %}
 {% endif %}
-<article>
+<article class="{% if include.post.media %}featured-media{% endif %}">
     <h1>
         <a class="subject" href="{{ include.post.url }}">
             {%- if concise and include.post.short_title %}
