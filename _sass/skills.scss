@@ -47,13 +47,13 @@
 svg {
     -webkit-align-self: center;
     align-self: center;
-    fill: #FFF;
+    fill: var(--text-color);
     @media print {
         fill: #000;
     }
 
     rect {
-        stroke: #FFF;
+        stroke: var(--text-color);
         @media print {
             stroke: #000;
         }
