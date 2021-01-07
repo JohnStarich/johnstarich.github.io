@@ -1,11 +1,8 @@
-/** Slideshow Styles
-    
-    Required variables with examples:
-    $button-color: #EEE;
-    $button-size: 50px;
-    $button-width: 5%;
-    $slideshow-height: 300px;
- */
+$button-color: var(--text-color);
+$button-size: 3em;
+$button-width: 5%;
+$slideshow-height: 300px;
+
 .slideshow {
     height: $slideshow-height;
     overflow: hidden;

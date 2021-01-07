@@ -1,0 +1,52 @@
+$helvetica: Helvetica, Arial, "Lucida Grande", sans-serif;
+$helvetica_neue: "Helvetica Neue", "Yantramanav", $helvetica;
+$helvetica-header-weight: 100;
+$helvetica-header2-weight: 200;
+$trebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$verdana: Verdana, Geneva, sans-serif;
+$georgia: Palatino, Georgia, "Times New Roman", serif;
+$monospace: "Courier New", Courier, monospace;
+$monospace-title: source-code-pro, Menlo, Monaco, Consolas, $monospace;
+
+@mixin header-font() {
+    font-family: $monospace;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1em;
+}
+
+@mixin major-subheading-font() {
+    font-family: $monospace;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+@mixin subheading-font() {
+    font-family: $monospace;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+@mixin title-font() {
+    font-family: $monospace-title;
+    font-weight: 500;
+    letter-spacing: 0; // must be 0 for typing animation to work
+}
+
+@mixin content-font() {
+    font-family: $georgia;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.4em;
+}
+
+@mixin link-font() {
+    font-family: $georgia;
+    font-weight: 400;
+}
+
+@mixin header-links-font() {
+    font-family: $monospace;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}

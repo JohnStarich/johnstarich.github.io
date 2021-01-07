@@ -31,32 +31,6 @@
 }
 
 
-/** Fonts */
-$helvetica: Helvetica, Arial, "Lucida Grande", sans-serif;
-$helvetica_neue: "Helvetica Neue", "Yantramanav", $helvetica;
-$helvetica-header-weight: 100;
-$helvetica-header2-weight: 200;
-$trebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-$verdana: Verdana, Geneva, sans-serif;
-$georgia: Palatino, Georgia, "Times New Roman", serif;
-$monospace: "Courier New", Courier, monospace;
-$monospace-title: source-code-pro, Menlo, Monaco, Consolas, $monospace;
-$monospace-header-weight: 500;
-
-$header-font: $monospace;
-$header-weight: $monospace-header-weight;
-$title-font: $monospace-title;
-$small-header-weight: $helvetica-header2-weight;
-$text-font: $georgia;
-$text-weight: 400;
-$link-weight: 400;
-
-/** Slideshow */
-$button-color: var(--text-color);
-$button-size: 3em;
-$button-width: 5%;
-$slideshow-height: 300px;
-
 @import "base";
 @import "header";
 @import "footer";

@@ -1,19 +1,17 @@
-@import "base";
+@import "fonts";
 
 .site-links {
-    font-family: $header-font;
-    font-weight: $header-weight;
+    @include header-font();
     font-size: 0.9em;
     margin: 0.25em 0;
-    letter-spacing: -0.15em;
+    letter-spacing: -0.15em; // reduce spaces between bullet items
 
     @media print {
         display: none;
     }
 
     a {
-        font-weight: 800;
-        letter-spacing: 0.03em;
+        @include header-links-font();
         &:hover {
             text-decoration: underline;
         }

@@ -1,13 +1,15 @@
+@import "fonts";
+
 footer {
-    $header-weight: 400;
-    font-weight: 300;
-    font-size: 0.9em;
     margin: 2em;
     text-align: center;
 
     .footer-heading {
-        font-weight: $header-weight;
-        margin-bottom: 0;
+        @include title-font();
+    }
+
+    .site-links {
+        margin-top: 0.5em;
     }
 
     .copyright {

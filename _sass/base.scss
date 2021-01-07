@@ -1,3 +1,5 @@
+@import "fonts";
+
 html {
     // fix landscape text scaling
     -webkit-text-size-adjust: 100%;
@@ -14,22 +16,16 @@ h1, h2, h3, h4, h5, h6, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $header-font;
+    @include header-font();
     margin: 0;
 }
 
 h1, h2 {
-    font-weight: $header-weight;
     font-size: 1.5em;
-    letter-spacing: 0.04em;
-}
-
-h3, h4, h5, h6 {
-    font-weight: $header-weight * 2;
 }
 
 body, article, section, p {
-    font-family: $text-font;
+    @include content-font();
 }
 
 body {
@@ -54,8 +50,7 @@ img {
 }
 
 article, section, p {
-    line-height: 1.4em;
-    letter-spacing: 0.02em;
+    @include content-font();
 }
 
 code.highlighter-rouge {
@@ -133,7 +128,7 @@ section {
     .section-header {
         width: 100%;
         font-size: 2em;
-        font-weight: $header-weight;
+        @include header-font();
 
         @media print {
             font-size: 1.5em;
@@ -231,7 +226,7 @@ article {
         }
 
         .subject {
-            font-weight: $header-weight * 2;
+            @include major-subheading-font();
             @media print {
                 color: #000;
             }
@@ -241,7 +236,7 @@ article {
             &:before {
                 content: "\2013";
                 margin-right: 0.3em;
-                font-weight: $header-weight;
+                @include subheading-font();
                 color: var(--text-color);
                 @media print {
                     color: #000;
@@ -258,18 +253,18 @@ article {
             font-size: 0.7em;
             white-space: nowrap;
             color: var(--text-color);
-            letter-spacing: -0.03em;
             @media print {
                 color: #000;
                 flex-grow: 1;
                 text-align: right;
             }
         }
+
+        @include subheading-font();
         padding: 0;
         padding-bottom: 5px;
         margin: 0;
         margin-bottom: 2%;
-        font-weight: var(--header-weight);
         width: 100%;
         border-bottom: 1px solid var(--highlight-color);
         @media print {
@@ -282,7 +277,7 @@ article {
     }
 
     a {
-        font-weight: $link-weight;
+        @include link-font();
     }
 
     ul, ol {
