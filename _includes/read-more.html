@@ -1,0 +1,6 @@
+{% assign first_char = include.url | slice: 0 %}
+{%- if first_char == '/' -%}
+<a class="read-more" href="{{ include.url }}">read more</a>
+{%- else -%}
+<a class="read-more" href="{{ include.url }}" target="_blank">read more</a>
+{%- endif %}

@@ -33,7 +33,7 @@
     {% endif %}
     {{ include.post.excerpt }}
     {% if include.post.excerpt != include.post.content %}
-        <a class="read-more" href="{{ include.post.url }}">read more</a>
+        {% include read-more.html url=include.post.url %}
     {% endif %}
     </div>
 </article>

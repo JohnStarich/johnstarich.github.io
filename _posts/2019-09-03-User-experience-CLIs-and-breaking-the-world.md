@@ -9,6 +9,6 @@ Starting at the end of last year, we put a plan in motion to revamp the CLI for 
 Learn how to craft a better CLI experience for customers and developers.
 Continue reading [on Medium](https://uxdesign.cc/user-experience-clis-and-breaking-the-world-baed8709244f).
 
-<a class="read-more" href="https://uxdesign.cc/user-experience-clis-and-breaking-the-world-baed8709244f">read more</a>
+{% include read-more.html url="https://uxdesign.cc/user-experience-clis-and-breaking-the-world-baed8709244f" %}
 
 [IKS]: https://cloud.ibm.com/docs/containers?topic=containers-getting-started

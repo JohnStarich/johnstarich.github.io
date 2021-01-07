@@ -15,6 +15,6 @@ With this kind of power, could a browser compile and run your code too? Ridiculo
 
 Then again, _why not?_ There’s no way I could ignore such a fascinating challenge. After four months of punching the keys and poring over documentation, I’ve finally created my answer: [Go Wasm][].
 
-<a class="read-more" href="https://johnstarich.medium.com/how-to-compile-code-in-the-browser-with-webassembly-b59ffd452c2b">read more</a>
+{% include read-more.html url="https://johnstarich.medium.com/how-to-compile-code-in-the-browser-with-webassembly-b59ffd452c2b" %}
 
 [Go Wasm]: https://johnstarich.medium.com/how-to-compile-code-in-the-browser-with-webassembly-b59ffd452c2b
