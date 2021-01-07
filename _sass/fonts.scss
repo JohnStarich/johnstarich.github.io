@@ -18,7 +18,7 @@ $monospace-title: source-code-pro, Menlo, Monaco, Consolas, $monospace;
 @mixin major-subheading-font() {
     font-family: $monospace;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
 }
 
 @mixin subheading-font() {

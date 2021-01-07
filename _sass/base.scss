@@ -157,6 +157,7 @@ article {
     text-align: left;
     background-color: var(--article-background);
     max-width: 40em;
+    border: 1px solid var(--text-border-color);
 
     @media (max-width: 40em) {
         padding: 5%;

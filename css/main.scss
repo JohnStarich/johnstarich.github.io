@@ -4,6 +4,7 @@
 :root {
     --base-color: #fff;
     --text-color: #0f232b;
+    --text-border-color: #{darken(#fff, 10%)};
     --highlight-color: #000;
     --body-background: #{darken(#fff, 4%)};
     --article-background: #fff;
@@ -19,6 +20,7 @@
     @media screen and (prefers-color-scheme: dark) {
         --base-color: #0f232b;
         --text-color: #fff;
+        --text-border-color: #{lighten(#000, 10%)};
         --highlight-color: #fff;
         --body-background: #{lighten(#000, 4%)};
         --article-background: #111116;
