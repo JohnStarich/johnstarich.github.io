@@ -18,6 +18,12 @@ section header {
         height: 11em;
         width:  11em;
         margin: 2em;
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-play-state: paused !important;
+            }
+        }
     }
 }
 

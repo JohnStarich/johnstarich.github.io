@@ -4,16 +4,18 @@
     letter-spacing: 0;
 
     @supports (background-clip: text) or (-webkit-background-clip: text) {
-        border: 1px solid transparent; box-sizing: border-box; // fix 1px background showing up
-        background: no-repeat linear-gradient(to left, transparent 1ch, $color 1ch);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        animation: type-title-#{$length} $duration steps($length, start);
+        @media screen and (prefers-reduced-motion: no-preference) {
+            border: 1px solid transparent; box-sizing: border-box; // fix 1px background showing up
+            background: no-repeat linear-gradient(to left, transparent 1ch, $color 1ch);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: type-title-#{$length} $duration steps($length, start);
 
-        @keyframes type-title-#{$length} {
-            0%   { background-position-x: -#{$length}ch; }
-            100% { background-position-x: 0; }
+            @keyframes type-title-#{$length} {
+                0%   { background-position-x: -#{$length}ch; }
+                100% { background-position-x: 0; }
+            }
         }
     }
 }
