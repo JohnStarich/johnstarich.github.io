@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<section>
+<section class="cols-2">
     {% assign portfolio_posts = site.categories.projects | concat: site.categories.experiences | concat:site.experiences %}
     {% include sort.html posts=portfolio_posts %}
     {% for post in sorted_posts %}
