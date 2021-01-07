@@ -203,7 +203,8 @@ article {
     }
 
     a.read-more {
-        color: var(--link-color);
+        color: var(--text-color);
+        opacity: 0.7;
 
         &:hover {
             color: var(--link-hover-color);
@@ -237,6 +238,7 @@ article {
 
         .subject {
             @include major-subheading-font();
+            color: var(--text-color);
             @media print {
                 color: #000;
             }

@@ -2,9 +2,9 @@
 
 .site-links {
     @include header-font();
-    font-size: 0.9em;
-    margin: 0.25em 0;
-    letter-spacing: -0.15em; // reduce spaces between bullet items
+    font-size: 0.8em;
+    margin: 0.55em 0;
+    letter-spacing: 0; // reduce spaces between bullet items
 
     @media print {
         display: none;

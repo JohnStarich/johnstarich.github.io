@@ -6,7 +6,7 @@ image: /favicon.png
 {% assign tags = "hack explore teach" | split: " " %}
 {% for tag in tags %}
     <section>
-        <header>
+        <header class="symbol-title">
             <div class="symbol">{% include {{tag}}.html %}</div>
             <h2>{{tag | capitalize}}</h2>
         </header>
@@ -32,7 +32,7 @@ const visibleObserver = new IntersectionObserver(entries => {
 
 function init() {
   visibleObserver.disconnect()
-  window.document.querySelectorAll('section header .symbol').forEach(s => visibleObserver.observe(s))
+  window.document.querySelectorAll('section header .symbol-title').forEach(s => visibleObserver.observe(s))
 }
 init()
 </script>
