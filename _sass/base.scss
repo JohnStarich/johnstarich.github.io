@@ -53,6 +53,10 @@ article, section, p {
     @include content-font();
 }
 
+p {
+    margin: 1em 0;
+}
+
 code.highlighter-rouge {
     box-sizing: border-box;
     padding: 0.125em 0.35em;
@@ -74,7 +78,8 @@ code.highlighter-rouge {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    margin-top: 0.5em;
+    margin-top: 0.8em; // slightly less than p tag margin, leaves room for translucent border on pic
+    margin-bottom: 1em;
     max-height: 30em;
 
     &:before {
@@ -268,9 +273,8 @@ article {
 
         @include subheading-font();
         padding: 0;
-        padding-bottom: 5px;
         margin: 0;
-        margin-bottom: 2%;
+        margin-bottom: 1%;
         width: 100%;
         @media print {
             border-color: #000;
