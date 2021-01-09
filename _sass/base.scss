@@ -321,6 +321,7 @@ article {
     width: 100%;
 
     a {
+        font-family: monospace; // fixes spacing issues across Windows/macOS
         margin: 1em auto;
         margin-bottom: 0;
         display: block;
@@ -332,7 +333,7 @@ article {
         color: var(--text-color);
         border: 1px solid var(--text-color);
         border-radius: 100%;
-        line-height: 125%;
+        line-height: 100%;
         opacity: 0.3;
         transition: opacity 0.2s;
         background: none;
