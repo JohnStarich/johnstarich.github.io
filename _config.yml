@@ -13,6 +13,8 @@ future: false
 unpublished: false
 limit_posts: 0
 show_dir_listing: false
+include:
+  - .well-known
 
 # Build settings
 markdown: kramdown
