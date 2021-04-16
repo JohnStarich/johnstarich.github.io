@@ -1,6 +1,6 @@
 {
   "im.vector.riot.jitsi": {
-    "preferredDomain": "jitsi.johnstarich.com"
+    "preferredDomain": "jitsi.jw6.us"
   },
   "m.homeserver": {
     "base_url": "https://matrix.johnstarich.com"
