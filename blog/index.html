@@ -3,9 +3,12 @@ layout: default
 ---
 <section class="cols-2">
 {% assign blog_posts = paginator.posts %}
-{% for post in blog_posts %}
-    {% include post-summary.html post=post wordy=true %}
-{% endfor %}
+    {% unless paginator.previous_page %}
+        {% include rss.html feed="https://blog.johnstarich.com/feed" %}
+    {% endunless %}
+    {% for post in blog_posts %}
+        {% include post-summary.html post=post wordy=true %}
+    {% endfor %}
     <div class="pagination">
     {% if paginator.total_pages > 1 %}
         <span class="prev">

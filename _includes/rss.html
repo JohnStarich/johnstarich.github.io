@@ -1,0 +1,93 @@
+<div class="rss-articles"></div>
+<script>
+const feedURL = {{include.feed | jsonify }};
+
+function run() {
+    fetch(proxyURL(feedURL))
+        .then(response => response.text())
+        .then(parseRSSFeed)
+}
+
+function proxyURL(url) {
+    return `https://cors-proxy.johnstarich.com/proxy?url=${url}`
+}
+
+function parseRSSFeed(xmlData) {
+    const dateFormatter = Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
+    const rss = document.querySelector(".rss-articles")
+    const data = new window.DOMParser().parseFromString(xmlData, "text/xml")
+    const items = Array.from(data.querySelectorAll("item"))
+        .map(item => {
+            return {
+                title: readCDATA(item.querySelector("title")),
+                link: item.querySelector("link").innerHTML,
+                pubDate: item.querySelector("pubDate") && item.querySelector("pubDate").textContent,
+                descriptionHTML: readCDATA(item.querySelector("description")),
+            }
+        })
+    items.sort((a, b) => a.pubDate < b.pubDate)
+
+    const articles = items.map(item => {
+        const article = document.createElement("article")
+        article.innerHTML = `
+<h1>
+<a class="subject" target="_blank" rel="noopener"></a>
+<span class="time"></span>
+</h1>
+<div class="article-excerpt">
+</div>`
+        const linkElem = article.querySelector(".subject")
+        linkElem.href = item.link
+        linkElem.innerText = item.title
+
+        const timeElem = article.querySelector(".time")
+        if (item.pubDate) {
+            const date = Date.parse(item.pubDate)
+            timeElem.innerText = dateFormatter.format(date)
+        }
+
+        const postData = document.createElement("div")
+        postData.innerHTML = item.descriptionHTML
+        const excerptElem = article.querySelector(".article-excerpt")
+
+        const image = postData.querySelector(".medium-feed-image img")
+        if (image) {
+            excerptElem.innerHTML = `
+<a class="media-link" target="_blank">
+    <div class="media"></div>
+</a>`
+            const mediaLink = excerptElem.querySelector(".media-link")
+            mediaLink.href = item.link
+            const imageElem = mediaLink.firstElementChild
+            const imageURL = proxyURL(image.src)
+            imageElem.style["background-image"] = `url(${imageURL})`
+            article.classList.add("featured-media")
+        }
+
+        const snippet = postData.querySelector(".medium-feed-snippet")
+        const excerpt = snippet ? snippet.innerText : postData.innerText
+        const excerptTextElem = document.createElement("p")
+        excerptTextElem.innerText = excerpt
+        excerptElem.appendChild(excerptTextElem)
+
+        return article
+    })
+    articles.forEach(article => rss.insertAdjacentElement('afterend', article))
+    rss.remove()
+}
+
+function readCDATA(node) {
+    if (!node) {
+        return node
+    }
+    if (!node.firstChild) {
+        if (node.nodeType === Node.TEXT_NODE || node.nodeType === Node.CDATA_SECTION_NODE) {
+            return node.wholeText
+        }
+        return undefined
+    }
+    return readCDATA(node.firstChild)
+}
+
+run()
+</script>

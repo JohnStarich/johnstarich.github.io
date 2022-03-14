@@ -54,3 +54,8 @@ titles_from_headings:
   enabled:     true
   strip_title: true
   collections: true
+
+# dev server options
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
