@@ -88,6 +88,11 @@ code.highlighter-rouge {
         width: 100%;
         padding-top: (3 / 4) * 100%;
     }
+
+    &.short:before {
+        // create a shorter height media tile for smaller adjacent text
+        padding-top: (1 / 2) * 100%;
+    }
 }
 
 .hover-link {

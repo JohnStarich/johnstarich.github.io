@@ -61,7 +61,7 @@ function parseRSSFeed(xmlData) {
 
             const imageElem = document.createElement("div")
             mediaLink.appendChild(imageElem)
-            imageElem.classList.add("media")
+            imageElem.classList.add("media", "short")
             const imageURL = proxyURL(image.src)
             imageElem.style["background-image"] = `url(${imageURL})`
             article.classList.add("featured-media")
