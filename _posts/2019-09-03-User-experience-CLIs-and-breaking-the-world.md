@@ -1,5 +1,6 @@
 ---
 tags: explore
+hidden: true
 ---
 
 # User experience, CLIs, and breaking the world

@@ -1,5 +1,6 @@
 ---
 tags: teach
+hidden: true
 ---
 
 # Shared volumes in Docker

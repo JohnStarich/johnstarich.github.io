@@ -1,5 +1,6 @@
 ---
 tags: teach
+hidden: true
 media: [/home-cloud/ingress-architecture.png]
 ---
 
