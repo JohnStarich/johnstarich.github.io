@@ -1,6 +1,7 @@
 <div class="rss-articles"></div>
 <script>
 const feedURL = {{include.feed | jsonify }};
+const shouldSortParent = {{include.sortParent | jsonify }} === true
 
 function run() {
     fetch(proxyURL(feedURL))
@@ -18,14 +19,18 @@ function parseRSSFeed(xmlData) {
     const data = new window.DOMParser().parseFromString(xmlData, "text/xml")
     const items = Array.from(data.querySelectorAll("item"))
         .map(item => {
+            let pubDate = item.querySelector("pubDate")
+            if (pubDate && pubDate.textContent) {
+                pubDate = Date.parse(pubDate.textContent)
+            }
             return {
                 title: readCDATA(item.querySelector("title")),
                 link: item.querySelector("link").innerHTML,
-                pubDate: item.querySelector("pubDate") && item.querySelector("pubDate").textContent,
+                pubDate: pubDate,
                 descriptionHTML: readCDATA(item.querySelector("description")),
             }
         })
-    items.sort((a, b) => a.pubDate < b.pubDate)
+    items.sort((a, b) => a.pubDate - b.pubDate)
 
     const articles = items.map(item => {
         const article = document.createElement("article")
@@ -42,8 +47,7 @@ function parseRSSFeed(xmlData) {
 
         const timeElem = article.querySelector(".time")
         if (item.pubDate) {
-            const date = Date.parse(item.pubDate)
-            timeElem.innerText = dateFormatter.format(date)
+            timeElem.innerText = dateFormatter.format(item.pubDate)
         }
 
         const postData = document.createElement("div")
@@ -73,6 +77,12 @@ function parseRSSFeed(xmlData) {
         return article
     })
     articles.forEach(article => rss.insertAdjacentElement('afterend', article))
+
+    if (shouldSortParent) {
+        Array.from(rss.parentElement.children)
+            .sort((a, b) => articleToDate(b) - articleToDate(a))
+            .forEach(article => rss.parentElement.appendChild(article))
+    }
     rss.remove()
 }
 
@@ -87,6 +97,17 @@ function readCDATA(node) {
         return undefined
     }
     return readCDATA(node.firstChild)
+}
+
+function articleToDate(elem) {
+    const time = elem.querySelector(".time")
+    if (time && time.innerText) {
+        const date = Date.parse(time.innerText)
+        if (date !== NaN) {
+            return date
+        }
+    }
+    return new Date(0)
 }
 
 run()
