@@ -10,7 +10,8 @@ function run() {
 }
 
 function proxyURL(url) {
-    return `https://cors-proxy.johnstarich.com/proxy?url=${url}`
+    const proxyPath = url.replace(/^https?:\/\//i, "")
+    return `https://cors-proxy.johnstarich.com/proxy/${proxyPath}`
 }
 
 function parseRSSFeed(xmlData) {
