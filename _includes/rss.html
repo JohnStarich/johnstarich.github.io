@@ -19,14 +19,11 @@ function parseRSSFeed(xmlData) {
     const data = new window.DOMParser().parseFromString(xmlData, "text/xml")
     const items = Array.from(data.querySelectorAll("item"))
         .map(item => {
-            let pubDate = item.querySelector("pubDate")
-            if (pubDate && pubDate.textContent) {
-                pubDate = Date.parse(pubDate.textContent)
-            }
+            const pubDateStr = readCDATA(item.querySelector("pubDate"))
             return {
                 title: readCDATA(item.querySelector("title")),
-                link: item.querySelector("link").innerHTML,
-                pubDate: pubDate,
+                link: readCDATA(item.querySelector("link")),
+                pubDate: pubDateStr && Date.parse(pubDateStr),
                 descriptionHTML: readCDATA(item.querySelector("description")),
             }
         })
