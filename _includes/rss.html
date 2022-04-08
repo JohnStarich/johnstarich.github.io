@@ -60,7 +60,7 @@ function parseRSSFeed(xmlData) {
         postData.innerHTML = item.descriptionHTML
         const excerptElem = article.querySelector(".article-excerpt")
 
-        const image = postData.querySelector("img")
+        const image = getImage(postData)
         if (image) {
             const mediaLink = document.createElement("a")
             excerptElem.appendChild(mediaLink)
@@ -124,6 +124,14 @@ function articleToDate(elem) {
         }
     }
     return new Date(0)
+}
+
+function getImage(postData) {
+    const image = postData.querySelector("img")
+    if (image.src.startsWith("https://cdn-images-1.medium.com/")) {
+        return image
+    }
+    return null
 }
 
 function getExcerpt(postData) {
