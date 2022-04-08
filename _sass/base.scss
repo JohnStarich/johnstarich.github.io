@@ -253,7 +253,7 @@ article {
         .company {
             &:before {
                 content: "\2013";
-                margin-right: 0.3em;
+                margin-right: 0.4em;
                 @include subheading-font();
                 color: var(--text-color);
                 @media print {
