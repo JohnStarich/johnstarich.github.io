@@ -21,11 +21,19 @@ function parseRSSFeed(xmlData) {
     const items = Array.from(data.querySelectorAll("item"))
         .map(item => {
             const pubDateStr = readCDATA(item.querySelector("pubDate"))
+            let description = readCDATA(item.querySelector("description"))
+            if (! description) {
+                const contentTags = item.getElementsByTagName("content:encoded")
+                if (contentTags.length > 0) {
+                    description = readCDATA(contentTags[0])
+                }
+            }
+            description = decodeHTMLEntities(description)
             return {
                 title: readCDATA(item.querySelector("title")),
                 link: readCDATA(item.querySelector("link")),
                 pubDate: pubDateStr && Date.parse(pubDateStr),
-                descriptionHTML: readCDATA(item.querySelector("description")),
+                descriptionHTML: description,
             }
         })
     items.sort((a, b) => a.pubDate - b.pubDate)
@@ -52,7 +60,7 @@ function parseRSSFeed(xmlData) {
         postData.innerHTML = item.descriptionHTML
         const excerptElem = article.querySelector(".article-excerpt")
 
-        const image = postData.querySelector(".medium-feed-image img")
+        const image = postData.querySelector("img")
         if (image) {
             const mediaLink = document.createElement("a")
             excerptElem.appendChild(mediaLink)
@@ -68,8 +76,7 @@ function parseRSSFeed(xmlData) {
             article.classList.add("featured-media")
         }
 
-        const snippet = postData.querySelector(".medium-feed-snippet")
-        const excerpt = snippet ? snippet.innerText : postData.innerText
+        const excerpt = getExcerpt(postData)
         const excerptTextElem = document.createElement("p")
         excerptElem.appendChild(excerptTextElem)
         excerptTextElem.innerText = excerpt
@@ -117,6 +124,50 @@ function articleToDate(elem) {
         }
     }
     return new Date(0)
+}
+
+function getExcerpt(postData) {
+    const mediumSnippet = postData.querySelector(".medium-feed-snippet")
+    if (mediumSnippet) {
+        return mediumSnippet.innerText
+    }
+
+    const paragraphBreak = "\n\n"
+    Array.from(postData.querySelectorAll("figure"))
+        .forEach(caption => caption.remove())
+    Array.from(postData.querySelectorAll("p"))
+        .forEach(caption => {
+            const newLine = document.createElement("span")
+            newLine.innerHTML = paragraphBreak
+            caption.appendChild(newLine)
+        })
+
+    const postText = postData.innerText
+    const paragraphs = postText.split("\n\n")
+    const minWordLength = 60
+    let snippet = ""
+    let words = 0
+    for (let p of paragraphs) {
+        snippet += p + paragraphBreak
+        words += wordCount(p)
+        if (words >= minWordLength) {
+            break
+        }
+    }
+    return snippet 
+}
+
+function decodeHTMLEntities(html) {
+    if (!html) {
+        return html
+    }
+    const textarea = document.createElement('textarea')
+    textarea.innerHTML = html
+    return textarea.value
+}
+
+function wordCount(s) {
+    return s.trim().split(/\s+/).length
 }
 
 run()
