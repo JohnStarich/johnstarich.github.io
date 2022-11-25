@@ -50,3 +50,9 @@ $monospace-title: source-code-pro, Menlo, Monaco, Consolas, $monospace;
     font-weight: 800;
     letter-spacing: 0.03em;
 }
+
+@mixin buttons-font() {
+    font-family: $monospace;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}

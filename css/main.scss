@@ -12,6 +12,7 @@
     --link-color: #08d;
     --link-underline-color: #{darken(#08d, 10%)};
     --link-hover-color: #{lighten(#08d, 15%)};
+    --link-background-hover-color: #{transparentize(lighten(#08d, 15%), 0.9)};
     --code-background-color: #eee;
     --code-block-background-color: #{lighten(#eee, 3%)};
     --accent-color: #83c;

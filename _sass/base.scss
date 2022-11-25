@@ -321,31 +321,45 @@ article {
     to   { visibility: hidden; }
 }
 
-.more-articles {
-    padding-top: 0;
-    width: 100%;
+.center-row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+}
 
-    a {
-        font-family: monospace; // fixes spacing issues across Windows/macOS
-        margin: 1em auto;
-        margin-bottom: 0;
-        display: block;
-        font-size: 1.5em;
+.button {
+    @include buttons-font();
+    padding-top: 0.4em;
+    padding-bottom: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    transition-property: color, border-color, background-color;
+    transition-duration: 150ms;
+
+    &:hover, &:active {
         text-decoration: none;
-        padding: 0.3em;
-        width:  1em;
-        height: 1em;
-        color: var(--text-color);
-        border: 1px solid var(--text-color);
-        border-radius: 100%;
-        line-height: 100%;
-        opacity: 0.3;
-        transition: opacity 0.2s;
-        background: none;
+    }
+}
 
-        &:hover {
-            opacity: 1;
-        }
+.button-primary {
+    background-color: var(--link-color);
+    color: var(--base-color);
+    &:hover, &:active {
+        background-color: var(--link-hover-color);
+    }
+}
+
+.button-secondary {
+    background-color: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    &:hover, &:active {
+        color: var(--link-color);
+        border-color: var(--link-hover-color);
+        background-color: var(--link-background-hover-color);
     }
 }
 

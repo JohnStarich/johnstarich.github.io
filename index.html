@@ -16,9 +16,14 @@ image: /favicon.png
             {% for post in sorted_posts limit:post_limit %}
                 {% include post-summary.html post=post %}
             {% endfor %}
-            {% if sorted_posts.size > post_limit %}
-                <div class="more-articles"><a aria-label="show more articles" href="{% link blog/index.html %}">&#xFF0B;</a></div>
-            {% endif %}
+            <div class="center-row">
+                {% if forloop.first %}
+                    {% include follow.html %}
+                {% endif %}
+                {% if sorted_posts.size > post_limit %}
+                    <a class="button button-secondary" aria-label="show more articles" href="{% link blog/index.html %}">Read more</a>
+                {% endif %}
+            </div>
         </div>
     </section>
 {% endfor %}
