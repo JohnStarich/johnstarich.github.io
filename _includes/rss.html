@@ -97,7 +97,15 @@ function parseRSSFeed(xmlData) {
     if (shouldSortParent) {
         Array.from(rss.parentElement.children)
             .sort((a, b) => articleToDate(b) - articleToDate(a))
-            .forEach(article => rss.parentElement.appendChild(article))
+            .forEach((article, i) => {
+                rss.parentElement.appendChild(article)
+                if (i == 0) {
+                    const readMore = document.createElement("div")
+                    readMore.classList.add("center-row")
+                    readMore.innerHTML = `{% include follow.html %}`
+                    rss.parentElement.appendChild(readMore)
+                }
+            })
     }
     rss.remove()
 }
