@@ -328,6 +328,10 @@ article {
     justify-content: center;
 }
 
+.full-width {
+    width: 100%;
+}
+
 .button {
     @include buttons-font();
     padding-top: 0.4em;

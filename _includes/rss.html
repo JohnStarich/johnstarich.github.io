@@ -99,9 +99,9 @@ function parseRSSFeed(xmlData) {
             .sort((a, b) => articleToDate(b) - articleToDate(a))
             .forEach((article, i) => {
                 rss.parentElement.appendChild(article)
-                if (i == 0) {
+                if (i === 1 || rss.parentElement.children.length === 1) {
                     const readMore = document.createElement("div")
-                    readMore.classList.add("center-row")
+                    readMore.classList.add("center-row", "full-width")
                     readMore.innerHTML = `{% include follow.html %}`
                     rss.parentElement.appendChild(readMore)
                 }
